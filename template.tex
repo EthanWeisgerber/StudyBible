@@ -1,0 +1,88 @@
+% !TeX program = XeLaTeX
+
+\documentclass[12pt,twoside]{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{multicol}
+\usepackage{dblfnote}
+\usepackage{lipsum}
+\usepackage{fancyhdr}
+\usepackage{lmodern}
+\usepackage{lmodern}
+\usepackage{graphicx}
+
+
+\setlength{\columnsep}{1cm}
+
+\interfootnotelinepenalty=10000
+
+\makeatletter
+\renewcommand{\@makefntext}[1]{%
+  \noindent#1\par}  % Just the text, no indent, no label, no dash
+\makeatother
+
+% Superscript verse number
+\newcommand{\vs}[1]{\textsuperscript{#1}}
+
+% Custom study note footnote, markerless, with custom label inside
+\newcommand{\vnote}[2]{%
+  \begingroup
+  \renewcommand\thefootnote{}%
+  \footnote{\textbf{}#2}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
+\renewcommand{\footnoterule}{%
+  \vspace{0.5em} % Space above the line
+  \noindent\rule{\textwidth}{1pt} % The line itself
+  \vspace{0.5em} % Space below the line
+}
+
+\newcommand{\chapterWithIndent}[2]{%
+  \noindent
+  \begin{minipage}[t]{1cm}
+    \vspace{-0.4\baselineskip}
+    {\fontsize{40pt}{48pt}\selectfont \textbf{#1}}
+  \end{minipage}%
+  \hspace{0.3cm}%
+  \begin{minipage}[t]{\dimexpr\linewidth - 1.5cm - 0.3cm\relax}
+    \hangindent=1.5em
+    \hangafter=3
+    #2
+    \vspace{-0.67cm}
+  \end{minipage}
+}
+
+
+\setlength{\columnsep}{0.5cm}
+\setlength{\headheight}{14.49998pt}
+
+\pagestyle{fancy}
+\fancyhf{} % Clear all header and footer fields
+\fancyhead[LO,RE]{\thepage} % Left on odd pages, right on even pages
+
+\begin{document}
+
+\begin{center}
+{\fontsize{40pt}{48pt}\selectfont \textbf{|| Book Name ||}}\\
+\vspace{0.5cm}
+\end{center}
+\thispagestyle{fancy}
+
+
+%\begin{multicols}{2}
+
+
+\subsection*{\textbf{Story Headers}}
+
+\chapterWithIndent{1}{
+    \vs{1} Here is where you enter verse one text. Continue adding verses in these brackets until you reach the end of the third line, then start typing as normal outside of the brackets. This is to ensure that the text is indented properly so that the chapter number is indented.
+} 
+
+\vnote{1}{\textbf{1:1} - Note on verse one.}
+
+\noindent See how I type outside the brackets here? Remember to use the no indent command to make it look all nice.
+\vs{2} Now you can start on a new verse with the vs command. Additionally, you can set up study notes with the vnote command.\vnote{2}{\textbf{1:2} - Note on verse two.}
+\vs{3} Verse three here.\vnote{3}{\textbf{1:3} - Note on verse three.}
+
+\end{document}
