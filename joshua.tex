@@ -1,0 +1,193 @@
+% !TeX program = XeLaTeX
+
+\documentclass[12pt,twoside]{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{multicol}
+\usepackage{dblfnote}
+\usepackage{lipsum}
+\usepackage{fancyhdr}
+\usepackage{lmodern}
+\usepackage{lmodern}
+\usepackage{graphicx}
+
+
+\setlength{\columnsep}{1cm}
+
+\interfootnotelinepenalty=10000
+
+\makeatletter
+\renewcommand{\@makefntext}[1]{%
+  \noindent#1\par}  % Just the text, no indent, no label, no dash
+\makeatother
+
+% Superscript verse number
+\newcommand{\vs}[1]{\textsuperscript{#1}}
+
+% Custom study note footnote, markerless, with custom label inside
+\newcommand{\vnote}[2]{%
+  \begingroup
+  \renewcommand\thefootnote{}%
+  \footnote{\textbf{}#2}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
+\renewcommand{\footnoterule}{%
+  \vspace{0.5em} % Space above the line
+  \noindent\rule{\textwidth}{1pt} % The line itself
+  \vspace{0.5em} % Space below the line
+}
+
+\newcommand{\chapterWithIndent}[2]{%
+  \noindent
+  \begin{minipage}[t]{1cm}
+    \vspace{-0.4\baselineskip}
+    {\fontsize{40pt}{48pt}\selectfont \textbf{#1}}
+  \end{minipage}%
+  \hspace{0.3cm}%
+  \begin{minipage}[t]{\dimexpr\linewidth - 1.5cm - 0.3cm\relax}
+    \hangindent=1.5em
+    \hangafter=3
+    #2
+    \vspace{0.1cm}
+  \end{minipage}
+}
+
+
+\setlength{\columnsep}{0.5cm}
+\setlength{\headheight}{14.49998pt}
+
+\pagestyle{fancy}
+\fancyhf{} % Clear all header and footer fields
+\fancyhead[LO,RE]{\thepage} % Left on odd pages, right on even pages
+
+\begin{document}
+
+\begin{center}
+{\fontsize{40pt}{48pt}\selectfont \textbf{|| Joshua ||}}\\
+\vspace{0.5cm}
+\end{center}
+\thispagestyle{fancy}
+
+
+%\begin{multicols}{2}
+
+
+\subsection*{\textbf{Joshua Installed as Leader}}
+
+\noindent
+\begin{minipage}[t]{1.5cm}
+  \vspace{-0.4\baselineskip} % Adjust vertical alignment
+  {\fontsize{40pt}{48pt}\selectfont \textbf{1}}
+\end{minipage}%
+\hspace{-0.3cm}%
+\begin{minipage}[t]{\dimexpr\linewidth - 1.5cm - 0.5cm\relax}
+    \vs{1} After the death of Moses the servant of the Lord, the Lord said to Joshua son of Nun, Moses' aide:
+\end{minipage}
+\vnote{1}{\textbf{1:1} - Note on verse one. until the Lord gives them rest, as he has done for you, and until they too have taken possession of the land the Lord your God is giving them. After that, you may go back and occupy your own land, which Moses the servant of the Lord gave you east of the Jordan toward the sunrise. until the Lord gives them rest, as he has done for you, and until they too have taken possession of the land the Lord your God is giving them. After that, you may go back and occupy your own land, which Moses the servant of the Lord gave you east of the Jordan toward the sunrise. until the Lord gives them rest, as he has done for you, and until they too have taken possession of the land the Lord your God is giving them. After that, you may go back and occupy your own land, which Moses the servant of the Lord gave you east of the Jordan toward the sunrise.}
+
+\hspace*{15pt}
+\vs{2} ``Moses my servant is dead. Now then, you and all these people, get ready to cross the Jordan River into the land I am about to give them--to the Israelites.\vnote{2}{\textbf{1:2} - Note on verse two. until the Lord gives them rest, as he has done for you, and until they too have taken possession of the land the Lord your God is giving them. After that, you may go back and occupy your own land, which Moses the servant of the Lord gave you east of the Jordan toward the sunrise.}
+\vs{3} I will give you every place where you set you foot, as I promised Moses.\vnote{3}{\textbf{1:3} - until the Lord gives them rest, as he has done for you, and until they too have taken possession of the land the Lord your God is giving them. After that, you may go back and occupy your own land, which Moses the servant of the Lord gave you east of the Jordan toward the sunrise.}
+\vs{4} Your territory will extend from the desert to Lebanon, and from the great river, the Euphrates---all the Hittite country---to the Mediterranean Sea in the west.
+\vs{5} No one will be able to stand against you all the days of your life. As I was with Moses, so I will be with you; I will never leave you nor forsake you.
+\vs{6} Be strong and courageous, because you will lead these people to inherit the land I swore to their ancestors to give them.
+
+\vs{7} ``Be strong and very courageous. Be careful to obey all the law my servant Moses gave you; do not turn from it to the right or to the left, that you may be successful wherever you go.
+\vs{8} Keep this Book of the Law always on your lips; meditate on it day and night, so that you may be careful to do everything written in it. Then you will be prosperous and successful.
+\vs{9} Have I not commanded you? Be strong and courageous. Do not be afraid; do not be discouraged, for the Lord your God will be with you wherever you go.''
+
+\vs{10} So Joshua ordered the officers of the people:
+\vs{11} ``Go through the camp and tell the people, `Get your provisions ready. Three days from now you will cross the Jordan here to go in and take posession of the land the Lord your God is giving you for your own.' ''
+
+\vs{12} But to the Reubanites, the Gadites and the half-tribe of Manasseh, Joshua said,
+\vs{13} ``Remember the command that Moses the servant of the Lord gave you after he said, `The Lord your God will give you rest by giving you this land.'
+\vs{14} Your wives, your children and your livestock may stay in the land that Moses gave you east of the Jordan, but all your fighting men, ready for battle, must cross over ahead of your fellow Israelites. You are to help them
+\vs{15} until the Lord gives them rest, as he has done for you, and until they too have taken possession of the land the Lord your God is giving them. After that, you may go back and occupy your own land, which Moses the servant of the Lord gave you east of the Jordan toward the sunrise.''
+
+\vs{16} Then they answered Joshua, ``Whatever you have commanded us we will do, and wherever you send us we will go.
+\vs{17} Just as we fully obeyed Moses, so we will obey you. Only may the Lord your God be with you as he was with Moses.
+\vs{18} Whoever rebels against your word and does not obey it, whatever you may command them, will be put to death. Only be strong and courageous!''
+
+\subsection*{\textbf{Rahab and the Spies}}
+
+\chapterWithIndent{2}{%
+  \vs{1} Then Joshua son of Nun secretly sent two spies from Shittim. ``Go, look over the land," he said, ``especially Jericho." So they went and entered the house of a prostitute named Rahab and stayed there.
+}
+
+
+
+\vs{2} The king of Jericho was told, ``Look, some of the Israelites have come here tonight to spy out the land.''
+\vs{3} So the king of Jericho sent this message to Rahab: ``Bring out the men who came to you and entered your house, because they have come to spy out the whole land.''
+
+\vs{4} But the woman had taken the two men and hidden them. She said, ``Yes, the men came to me, but I did not know where they had come from.
+\vs{5} At dusk, when it was time to close the city gate, they left. I don't know which way they went. Go after them quickly. You may catch up with them.''
+\vs{6} (But she had taken them up to the roof and hidden them under the stalks of flax she had laid out on the roof.)
+\vs{7} So the men set out in pursuit of the spies on the road that leads to the fords of the Jordan, and as soon as the pursuers had gone out, the gate was shut.
+
+\vs{8} Before the spies lay down for the night, she went up on the roof
+\vs{9} and said to them, ``I know that the Lord has given you this land and that a great fear of you has fallen on us, so that all who live in this country are melting in fear because of you.
+\vs{10} We have heard how the Lord dried up the water of the Red Sea for you when you came out of Egypt, and what you did to Sihon and Og, the two kings of the Amorites east of the Jordan, whom you completely destroyed.
+\vs{11} When we heard of it, our hearts melted in fear and everyone's courage failed because of you, for the Lord your God is God in heaven above and on the earth below.
+
+\vs{12} ``Now then, please swear to me by the Lord that you will show kindness to my family, because I have shown kindness to you. Give me a sure sign
+\vs{13} that you will spare the lives of my father and mother, my brothers and sisters, and all who belong to them---and that you will save us from death.''
+
+\vs{14} ``Our lives for your lives!'' the men assured her. ``If you don't tell what we are doing, we will treat you kindly and faithfully when the Lord gives us the land.''
+
+\vs{15} So she let them down by a rope through the window, for the house she lived in was a part of the city wall.
+\vs{16} She said to them, ``Go to the hills so the pursuers will not find you. Hide yourselves there three days until they return, and then go on your way.''
+
+\vs{17} Now the men had said to her, ``This oath you made us swear will not be binding on us
+\vs{18} unless, when we enter the land, you have tied this scarlet cord in the window through which you let us down, and unless you have brought your father and mother, your brothers and all your family into your house.
+\vs{19} If any of them go outside your house into the street, their blood will be on their own heads; we will not be responsible. As for those who are in the house with you, their blood will be on our head if a hand is laid on them.
+\vs{20} But if you tell what we are doing, we will be released from the oath you made us swear.''
+
+\vs{21} ``Agreed,'' she replied. ``Let it be as you say.''
+
+So she sent them away, and they departed. And she tied the scarlet cord in the window.
+
+\vs{22} When they left, they went into the hills and stayed there three days until the pursuers had searched all along the road and returned without finding them.
+\vs{23} Then the two men started back. They went down out of the hills, forded the river and came to Joshua son of Nun and told him everything that had happened to them.
+\vs{24} They said to Joshua, ``The Lord has surely given the whole land into our hands; all the people are melting in fear because of us.''
+
+\subsection*{\textbf{Crossing the Jordan}}
+
+\chapterWithIndent{3}{%
+  \vs{1} Early in the morning Joshua and all the Israelites set out from Shittim and went to the Jordan, where they camped before crossing over.
+  \vs{2} After three days the officers went throughout the camp,
+  \vs{3} giving orders to the people: “When you see the ark of the 
+}
+
+\noindent covenant of the Lord your God and the Levitical priests carrying it, you are to move out from your positions and follow it.
+\vs{4} Then you will know which way to go, since you have never been this way before. But keep a distance of about two thousand cubits between you and the ark; do not go near it.''
+
+\vs{5} Joshua told the people, ``Consecrate yourselves, for tomorrow the Lord will do amazing things among you.''
+
+\vs{6} Joshua said to the priests, ``Take up the ark of the covenant and pass on ahead of the people.'' So they took it up and went ahead of them.
+
+\vs{7} And the Lord said to Joshua, ``Today I will begin to exalt you int the eyes of all Israel, so they may know that I am with you as I was with Moses.
+\vs{8} Tell the priests who carry the ark of the covenant: `When you reach the edge of the Jordan's waters, go and stand in the river.' ''
+
+\vs{9} Joshua said to the Israelites, ``Come here and listen to the words of the Lord your God.
+\vs{10} This is how you will know that the living God is among you and that he will certainly drive out before you the Caananites, Hittites, Hivitesm Perizzites, Girgashites, Amorites and Jebusites.
+\vs{11} See, the ark of the covenant of the Lord of all the earth will go into the Jordan ahead of you.
+\vs{12} Now then, choose twelve men from the tribes of Israel, one from each tribe.
+\vs{13} And as soon as the priests who carry the ark of the Lord---the Lord of all the earth---set foot in the Jordan, its waters flowing downstream will be cut off and stand up in a heap.''
+
+\vs{14} So when the people broke camp to cross the Jordan, the priests carrying the ark of the covenant went ahead of them.
+\vs{15} Now the Jordan is at flood stage all during harvest. Yet as soon as the priests who carried the ark reached the Jordan and their feet touched the water's edge,
+\vs{16} the water from upstream stopped flowing. It piled up in a heap a great distance away, at a town called Adam in the vicinity of Zarethan, while the water flowing down to the Sea of the Arabah (that is, the Dead Sea) was completely cut off. So the people crossed over opposite Jericho.
+\vs{17} The priests who carried the ark of the covenant of the Lord stopped in the middle of the Jordan and stood on dry ground, while all Israel passed by until the whole nation had completed the crossing on dry ground.
+
+\chapterWithIndent{4}{
+    \vs{1} When the whole nation had finished crossing the Jordan, the Lord said to Joshua,
+    \vs{2} ``Choose twelve men from among the people, one from each tribe,
+    \vs{3} and tell them to take up twelve stones from the middle of the Jordan, from the right where the priests are 
+}
+
+\noindent standing, and carry them over with you and put them down at the place where you stay tonight.''
+
+%\end{multicols}
+
+\end{document}
