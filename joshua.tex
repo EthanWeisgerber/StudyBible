@@ -9,6 +9,11 @@
 \usepackage{lmodern}
 \usepackage{lmodern}
 \usepackage{graphicx}
+\usepackage{changepage}
+\usepackage{longtable}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[hebrew, english]{babel}
+\selectlanguage{english}
 
 
 \setlength{\columnsep}{1cm}
@@ -27,29 +32,44 @@
 \newcommand{\vnote}[2]{%
   \begingroup
   \renewcommand\thefootnote{}%
-  \footnote{\textbf{}#2}%
+  \footnote{\scriptsize \textbf{}#2}%
   \addtocounter{footnote}{-1}%
   \endgroup
 }
 
 \renewcommand{\footnoterule}{%
-  \vspace{0.5em} % Space above the line
-  \noindent\rule{\textwidth}{1pt} % The line itself
-  \vspace{0.5em} % Space below the line
+  \vspace{0.3em} % Space above the line
+  \noindent\textcolor{MidnightBlue}{\noindent\rule{\textwidth}{2pt}} % The line itself
+  \vspace{-0.1em} % Space below the line
 }
 
 \newcommand{\chapterWithIndent}[2]{%
   \noindent
   \begin{minipage}[t]{1cm}
     \vspace{-0.4\baselineskip}
-    {\fontsize{40pt}{48pt}\selectfont \textbf{#1}}
+    {\textcolor{MidnightBlue}{\fontsize{40pt}{48pt}\selectfont \textbf{#1}}}
   \end{minipage}%
   \hspace{0.3cm}%
   \begin{minipage}[t]{\dimexpr\linewidth - 1.5cm - 0.3cm\relax}
     \hangindent=1.5em
     \hangafter=3
     #2
-    \vspace{0.1cm}
+    \vspace{0.05cm}
+  \end{minipage}
+}
+
+\newcommand{\chapterWithBigIndent}[2]{%
+  \noindent
+  \begin{minipage}[t]{1cm}
+    \vspace{-0.4\baselineskip}
+    {\textcolor{MidnightBlue}{\fontsize{40pt}{48pt}\selectfont \textbf{#1}}}
+  \end{minipage}%
+  \hspace{0.9cm}%
+  \begin{minipage}[t]{\dimexpr\linewidth - 1.5cm - 0.3cm\relax}
+    \hangindent=1.5em
+    \hangafter=3
+    #2
+    \vspace{0.05cm}
   \end{minipage}
 }
 
@@ -59,36 +79,37 @@
 
 \pagestyle{fancy}
 \fancyhf{} % Clear all header and footer fields
-\fancyhead[LO,RE]{\thepage} % Left on odd pages, right on even pages
+\fancyhead[LO,RE]{\thepage}% Left on odd pages, right on even pages
 
 \begin{document}
 
 \begin{center}
-{\fontsize{40pt}{48pt}\selectfont \textbf{|| Joshua ||}}\\
+{\textcolor{MidnightBlue}{\fontsize{40pt}{48pt}\selectfont \textbf{Joshua}}}\\
 \vspace{0.5cm}
+\selectlanguage{hebrew}
+{\Huge \textcolor{MidnightBlue}{סֵפֶר יְהוֹשֻׁעַ}}
+\vspace{-1cm}
 \end{center}
 \thispagestyle{fancy}
 
 
 %\begin{multicols}{2}
 
-
-\subsection*{\textbf{Joshua Installed as Leader}}
-
+\selectlanguage{english}
+\textcolor{MidnightBlue}{\subsection*{\textbf{Joshua Installed as Leader}}}
 \noindent
 \begin{minipage}[t]{1.5cm}
   \vspace{-0.4\baselineskip} % Adjust vertical alignment
-  {\fontsize{40pt}{48pt}\selectfont \textbf{1}}
+  {\textcolor{MidnightBlue}{\fontsize{40pt}{48pt}\selectfont \textbf{1}}}
 \end{minipage}%
 \hspace{-0.3cm}%
 \begin{minipage}[t]{\dimexpr\linewidth - 1.5cm - 0.5cm\relax}
-    \vs{1} After the death of Moses the servant of the Lord, the Lord said to Joshua son of Nun, Moses' aide:
+    \vs{1} After the death of Moses, the servant of the Lord, the Lord said to Joshua son of Nun, Moses' aide:
 \end{minipage}
-\vnote{1}{\textbf{1:1} - Note on verse one. until the Lord gives them rest, as he has done for you, and until they too have taken possession of the land the Lord your God is giving them. After that, you may go back and occupy your own land, which Moses the servant of the Lord gave you east of the Jordan toward the sunrise. until the Lord gives them rest, as he has done for you, and until they too have taken possession of the land the Lord your God is giving them. After that, you may go back and occupy your own land, which Moses the servant of the Lord gave you east of the Jordan toward the sunrise. until the Lord gives them rest, as he has done for you, and until they too have taken possession of the land the Lord your God is giving them. After that, you may go back and occupy your own land, which Moses the servant of the Lord gave you east of the Jordan toward the sunrise.}
 
 \hspace*{15pt}
-\vs{2} ``Moses my servant is dead. Now then, you and all these people, get ready to cross the Jordan River into the land I am about to give them--to the Israelites.\vnote{2}{\textbf{1:2} - Note on verse two. until the Lord gives them rest, as he has done for you, and until they too have taken possession of the land the Lord your God is giving them. After that, you may go back and occupy your own land, which Moses the servant of the Lord gave you east of the Jordan toward the sunrise.}
-\vs{3} I will give you every place where you set you foot, as I promised Moses.\vnote{3}{\textbf{1:3} - until the Lord gives them rest, as he has done for you, and until they too have taken possession of the land the Lord your God is giving them. After that, you may go back and occupy your own land, which Moses the servant of the Lord gave you east of the Jordan toward the sunrise.}
+\vs{2} ``Moses my servant is dead. Now then, you and all these people, get ready to cross the Jordan River into the land I am about to give them--to the Israelites.
+\vs{3} I will give you every place where you set you foot, as I promised Moses.
 \vs{4} Your territory will extend from the desert to Lebanon, and from the great river, the Euphrates---all the Hittite country---to the Mediterranean Sea in the west.
 \vs{5} No one will be able to stand against you all the days of your life. As I was with Moses, so I will be with you; I will never leave you nor forsake you.
 \vs{6} Be strong and courageous, because you will lead these people to inherit the land I swore to their ancestors to give them.
@@ -109,15 +130,13 @@
 \vs{17} Just as we fully obeyed Moses, so we will obey you. Only may the Lord your God be with you as he was with Moses.
 \vs{18} Whoever rebels against your word and does not obey it, whatever you may command them, will be put to death. Only be strong and courageous!''
 
-\subsection*{\textbf{Rahab and the Spies}}
+\subsection*{\textcolor{MidnightBlue}{\textbf{Rahab and the Spies}}}
 
 \chapterWithIndent{2}{%
   \vs{1} Then Joshua son of Nun secretly sent two spies from Shittim. ``Go, look over the land," he said, ``especially Jericho." So they went and entered the house of a prostitute named Rahab and stayed there.
 }
 
-
-
-\vs{2} The king of Jericho was told, ``Look, some of the Israelites have come here tonight to spy out the land.''
+\vs{2} The king of Jericho was told, ``Look, some of the Israelites have come here tonight to spy out the land.''\vnote{1}{\textbf{2:1} - Jericho (“moon city”), also called the “City of Palms”, was the primary focus of the spies. A fortified city, it was located just five miles (eight km) west of the Jordan River and had springs that made it an oasis. Archaeological excavations of Jericho reveal continuous occupation to this point back to at least 7000 B.C.}\vnote{2}{\textbf{2:2} - The Amarna letters of the fourteenth century B.C. (see “The Amarna Tablets and the Habiru”) verify that the major cities of Canaan were in reality small kingdoms, each ruled by a local king.}
 \vs{3} So the king of Jericho sent this message to Rahab: ``Bring out the men who came to you and entered your house, because they have come to spy out the whole land.''
 
 \vs{4} But the woman had taken the two men and hidden them. She said, ``Yes, the men came to me, but I did not know where they had come from.
@@ -147,11 +166,12 @@
 
 So she sent them away, and they departed. And she tied the scarlet cord in the window.
 
-\vs{22} When they left, they went into the hills and stayed there three days until the pursuers had searched all along the road and returned without finding them.
+\vs{22} When they left, they went into the hills and stayed there three days until the pursuers had searched all along the road and returned without finding them.\vnote{22}{\textbf{2:22} - The high, rugged hills of the Holy Land’s central mountain ridge lay directly west of ancient Jericho. Their
+honeycombed caves made the concealment and escape of the two spies relatively easy.}
 \vs{23} Then the two men started back. They went down out of the hills, forded the river and came to Joshua son of Nun and told him everything that had happened to them.
 \vs{24} They said to Joshua, ``The Lord has surely given the whole land into our hands; all the people are melting in fear because of us.''
 
-\subsection*{\textbf{Crossing the Jordan}}
+\subsection*{\textcolor{MidnightBlue}{\textbf{Crossing the Jordan}}}
 
 \chapterWithIndent{3}{%
   \vs{1} Early in the morning Joshua and all the Israelites set out from Shittim and went to the Jordan, where they camped before crossing over.
@@ -177,7 +197,8 @@ So she sent them away, and they departed. And she tied the scarlet cord in the w
 
 \vs{14} So when the people broke camp to cross the Jordan, the priests carrying the ark of the covenant went ahead of them.
 \vs{15} Now the Jordan is at flood stage all during harvest. Yet as soon as the priests who carried the ark reached the Jordan and their feet touched the water's edge,
-\vs{16} the water from upstream stopped flowing. It piled up in a heap a great distance away, at a town called Adam in the vicinity of Zarethan, while the water flowing down to the Sea of the Arabah (that is, the Dead Sea) was completely cut off. So the people crossed over opposite Jericho.
+\vs{16} the water from upstream stopped flowing. It piled up in a heap a great distance away, at a town called Adam in the vicinity of Zarethan, while the water flowing down to the Sea of the Arabah (that is, the Dead Sea) was completely cut off. So the people crossed over opposite Jericho.\vnote{16}{\textbf{3:15-16} - The grain harvest took place in April and May, so it was springtime. The Jordan was at flood stage due to the spring rains and the melting of snow on Mount Hermon. Earthquakes in the region of Adam have occurred several times in recorded history, resulting in a damming of the Jordan. The most recent occurrence was the quake of 1927, at which time an
+embankment on the western side of the river collapsed, completely blocking the waters for over 21 hours.}
 \vs{17} The priests who carried the ark of the covenant of the Lord stopped in the middle of the Jordan and stood on dry ground, while all Israel passed by until the whole nation had completed the crossing on dry ground.
 
 \chapterWithIndent{4}{
@@ -194,7 +215,8 @@ So she sent them away, and they departed. And she tied the scarlet cord in the w
 \vs{7} tell them that the flow of the Jordan was cut off before the ark of the covenant of the Lord. When it crossed the Jordan, the waters of the Jordan were cut off. These stones are to be a memorial to the people of Israel forever.
 
 \vs{8} So the Israelites did as Joshua commanded them. They took twelve stones from the middle of the Jordan, according to the number of the tribes of the Israelites, as the Lord had told Joshua; and they carried them over with them to their camp, where they put them down.
-\vs{9} Joshua set up the twelve stones that had been in the middle of the Jordan at the spot where the priests who carried the ark of the covenant had stood. And they are there to this day.
+\vs{9} Joshua set up the twelve stones that had been in the middle of the Jordan at the spot where the priests who carried the ark of the covenant had stood. And they are there to this day.\vnote{9}{\textbf{4:1-9} - Stone monuments were a common means in the Old Testament of inviting future generations to remember—and
+participate in—the great acts God had accomplished for his people (Ge 28:18–22; 31:45–46; Jos 24:26–27; 1Sa 7:12).}
 
 \vs{10} Now the priests who carried the ark remained standing in the middle of the Jordan until everything the Lord had commanded Joshua was done by the people, just as Moses had directed Joshua. The people hurried over,
 \vs{11} and as soon as all of them had crossed, the ark of the Lord and the priests came to the other side while the people watched.
@@ -223,15 +245,16 @@ So she sent them away, and they departed. And she tied the scarlet cord in the w
 
 \noindent Israelites.
 
-\subsection*{\textbf{Circumcision and Passover at Gilgal}}
-\vs{2} At that time the Lord said to Joshua, ``Make flint knives and circumcise the Israelites again.''
+\subsection*{\textcolor{MidnightBlue}{\textbf{Circumcision and Passover at Gilgal}}}
+
+\vs{2} At that time the Lord said to Joshua, ``Make flint knives and circumcise the Israelites again.''\vnote{5}{\textbf{5:2} - Metal knives were available, but flint made a more efficient surgical tool, as modern demonstrations have shown.}
 \vs{3} So Joshua made flint knives and circumcised the Israelites at Gibeath Haaraloth.
 
 \vs{4} Now this is why he did so: All those who came out of Egypt---all the men of military age---died in the wilderness on the way after leaving Egypt.
 \vs{5} All the people that came out had been circumcised, but all the people born in the wilderness during the journey from Egypt had not.
 \vs{6} The Israelites had moved about in the wilderness forty years until all the men who were of military age when they left Egypt had died, since they had not obeyed the Lord. For the Lord had sworn to them that they would not see the land he had solemnly promised their ancestors to give us, a land flowing with milk and honey.
 \vs{7} So he raised up their sons in their place, and these were the ones Joshua circumcised. They were still uncircumcised because they had not been circumcised on the way.
-\vs{8} And after the whole nation had been circumcised, they remained where they were in camp until they were healed.
+\vs{8} And after the whole nation had been circumcised, they remained where they were in camp until they were healed.\vnote{8}{\textbf{5:3-8} - No uncircumcised males had been allowed to participate in the original Passover meal (Ex 12:48–49). Circumcision was practiced by other nations (e.g., as a puberty rite), but not for covenantal reasons. Of course, only males could be circumcised, but Israelites of both genders and all ages were included in the covenant community and celebrated Passover (Ex 12:3–4, 24–27).}
 
 \vs{9} Then the Lord said to Joshua, ``Today I have rolled away the reproach of Egypt from you.'' So the place has been called Gilgal to this day.
 
@@ -239,13 +262,14 @@ So she sent them away, and they departed. And she tied the scarlet cord in the w
 \vs{11} The day after the Passover, that very day, they ate some of the produce of the land: unleavened bread and roasted grain.
 \vs{12} The manna stopped the day after they ate this food from the land; there was no longer any manna for the Israelites, but that year they ate of the produce of Canaan.
 
-\subsection*{\textbf{The Fall of Jericho}}
+\subsection*{\textcolor{MidnightBlue}{\textbf{The Fall of Jericho}}}
 
 \vs{13} Now when Joshua was near Jericho, he looked up and saw a man standing in front of him with a drawn sword in his hand. Joshua went up to him and asked, ``Are you for us or for our enemies?''
 
 \vs{14} ``Neither,'' he replied, ``but as commander of the army of the Lord I have now come.'' Then Joshua fell facedown to the ground in reverence, and asked him, ``What message does my Lord have for his servant?''
 
-\vs{15} The commander of the Lord's army replied, ``Take off your sandals, for the place where you are standing is holy.'' And Joshua did so.
+\vs{15} The commander of the Lord's army replied, ``Take off your sandals, for the place where you are standing is holy.'' And Joshua did so.\vnote{15}{\textbf{5:15} - Removing one’s sandals was a sign of respect and humility in the ancient Near East (cf. Ex 3:5, where God instructed
+Moses to remove his sandals at the site of the burning bush). This practice is still followed by Muslims before entering a mosque.}
 
 \chapterWithIndent{6}{
   \vs{1} Now the gates of Jericho were securely barred because of the Israelites. No one went out and no one came in.
@@ -253,10 +277,13 @@ So she sent them away, and they departed. And she tied the scarlet cord in the w
   \vs{2} Then the Lord said to Joshua, ``See, I have delivered Jericho into your hands, along
 }
 
+\vnote{1}{\textbf{6:1 - 10:15} - Archaeological evidence for the conquest is mixed, in part because the chronological problems are unresolved. On the one hand, clay tablets containing cuneiform letters to the Egyptian court have been found at Tell el-Amarna in Egypt from approximately 1375 B.C. These mention bands of Habiru who were threatening many of the cities of the Holy Land and creating fear among the Canaanite inhabitants (see “The Amarna Tablets and the Habiru”). On the other hand, numerous towns were destroyed around 1230 B.C. by unknown assailants, presumably the “Sea Peoples”, but possibly including the Israelites as well. The Biblical chronology based on 1 Kings 6:1 seems to demand an even earlier dating, near the end of the fifteenth century.}
+
 \noindent with its king and its fighting men.
 \vs{3} March around the city once with all the armed men. Do this for six days.
-\vs{4} Have seven priests carry trumpets of rams' horns in front of the ark. On the seventh day, march around the city seven times, with the priests blowing the trumpets.
-\vs{5} When you hear them sound a long blast on the trumpets, have all the people give a loud shout; then the wall of the city will collapse and the people will go up, everyone straight in.''
+\vs{4} Have seven priests carry trumpets of rams' horns in front of the ark. On the seventh day, march around the city seven times, with the priests blowing the trumpets.\vnote{4}{\textbf{6:4} - The “trumpets of rams’ horns” were not instruments of music but instruments for signaling, used in both religious and military contexts (in this case in both).}
+\vs{5} When you hear them sound a long blast on the trumpets, have all the people give a loud shout; then the wall of the city will collapse and the people will go up, everyone straight in.''\vnote{5}{\textbf{6:5} - The “loud blast” and “loud shout” signaled the onset of the attack—psychological warfare intended to create panic and
+confusion (see Jdg 7). In the Dead Sea Scroll of “The War of the Sons of Light Against the Sons of Darkness”, the Levites were instructed to blow in unison a great battle fanfare to melt the heart of the enemy.}
 
 \vs{6} So Joshua son of Nun called the priests and said to them, ``Take up the ark of the covenant and have seven priests carry trumpets in front of it.''
 \vs{7} And he ordered the army, ``Advance! March around the city, with an armed guard going ahead of the ark of the Lord.''
@@ -266,14 +293,17 @@ So she sent them away, and they departed. And she tied the scarlet cord in the w
 \vs{10} But Joshua had commanded the army, ``Do not give a war cry, do not raise your voices, do not say a word until the day I tell you to shout. Then shout!''
 \vs{11} So he had the ark of the Lord carried around the city, circling it once. Then the army returned to camp and spent the night there.
 
-\vs{12} Joshua got up early the next morning and the priests took up the ark of the Lord.
+\vs{12} Joshua got up early the next morning and the priests took up the ark of the Lord.\vnote{12}{\textbf{6:12-14} - Literary repetition, which reflected repetition in action, is a common feature found in ancient Near Eastern
+literature.}
 \vs{13} The seven priests carrying the seven trumpets went forward, marching before the ark of the Lord and blowing the trumpets. The armed guard marched ahead of them and the rear guard followed the ark of the Lord, while the trumpets kept sounding.
 \vs{14} So on the second day they marched around the city once and returned to the camp. They did this for six days.
 
 \vs{15} On the seventh day, they got up at daybreak and marched around the city seven times in the same manner, except that on that day they circled the city seven times.
 \vs{16} The seventh time around, when the priests sounded the trumpet blast, Joshua commanded the army, ``Shout! For the Lord has given you the city!
-\vs{17} The city and all that is in it are to be devoted to the Lord. Only Rahab the prostitute and all who are with her in her house shall be spared, because she hid the spies we sent.
-\vs{18} But keep away from the devoted things, so that you will not bring about your own destruction by taking any of them. Otherwise you will make the camp of Israel liable to destruction and bring trouble on it.
+\vs{17} The city and all that is in it are to be devoted to the Lord. Only Rahab the prostitute and all who are with her in her house shall be spared, because she hid the spies we sent.\vnote{17}{\textbf{6:17} - True to the promise of protection the spies had made to Rahab and her family, Joshua and his men spared them after they had captured the city. Jewish tradition has held Rahab in high esteem, one tradition making her the wife of Joshua himself. According to Matthew’s genealogy (Mt 1:5), she is not only one of the four women mentioned in the family tree of
+the Savior but also the mother of Boaz, the husband of Ruth, and the great-grandmother of King David (Ru 4:18–21). The author of Hebrews spoke of Rahab as an example of faith (Heb 11:31), and James showed his appreciation of her as a
+person in whom faith was not merely “theological” but also practical (Jas 2:5).}
+\vs{18} But keep away from the devoted things, so that you will not bring about your own destruction by taking any of them. Otherwise you will make the camp of Israel liable to destruction and bring trouble on it.\vnote{18}{\textbf{6:18-19} - A “devoted thing” was set apart to the Lord; thus it no longer belonged to the former owner and could not be used for sacrifice. Whereas a sacrifice or offering was a voluntary gift that could be recalled at any time prior to the ceremony, it was not a devoted thing. Achan’s sin at Jericho was considered far more serious than mere stealing, for he had taken something devoted. Nations, cities or people who were “devoted” were to be utterly destroyed (e.g., the Amalekites; 1Sa 15).}
 \vs{19} All the silver and gold and the articles of bronze and iron are sacred to the Lord and must go into his treasury.''
 
 \vs{20} When the trumpets sounded, the army shouted, and at the sound of the trumpet, when the men gave a loud shout, the wall collapsed; so everyone charged straight in, and they took the city.
@@ -285,13 +315,15 @@ So she sent them away, and they departed. And she tied the scarlet cord in the w
 \vs{24} Then they burned the whole city and everything in it, but they put the silver and gold and the articles of bronze and iron into the treasury of the Lord's house.
 \vs{25} But Joshua spared Rahab the prostitute, with her family and all who belonged to her, because she hid the men Joshua had sent as spies to Jericho---and she lives among the Israelites to this day.
 
-\vs{26} At that time Joshua pronounced this solemn oath: ``Cursed before the Lord is the one who undertakes to rebuild this city, Jericho:
+\vs{26} At that time Joshua pronounced this solemn oath: ``Cursed before the Lord is the one who undertakes to rebuild this city, Jericho:\vnote{26}{\textbf{6:26} - Joshua’s oath reflects that Jericho was to remain an object lesson of God’s great victory in Israel’s first battle. The
+city was soon resettled (18:21; Jdg 3:13; 2Sa 10:5) but remained without a wall. The curse was fulfilled during the reign of the evil king Ahab, when Hiel rebuilt the wall around Jericho (1Ki 16:34). It is unclear whether fulfillment came via a plague or accident or whether Hiel offered his son as a sacrifice.}
 
 \indent ``At the cost of his firstborn son will he lay its foundations; at the cost of his youngest will he set up its gates.''
 
 \vs{27} So the Lord was with Joshua, and his fame spread throughout the land.
 
-\subsection*{\textbf{Achan's Sin}}
+\subsection*{\textcolor{MidnightBlue}{\textbf{Achan's Sin}}}
+
 \chapterWithIndent{7}{%
   \vs{1} But the Israelites were unfaithful in regard to the devoted things; Achan son of Karmi, the son of Zimri, the son of Zerah, of the tribe of Judah, took some of them. So the Lord's anger burned against Israel.
 }
@@ -334,7 +366,8 @@ So she sent them away, and they departed. And she tied the scarlet cord in the w
 Then all Israel stoned him, and after they had stoned the rest, they burned them.
 \vs{26} Over Achan they heaped up a large pile of rocks, which remains to this day. Then the Lord turned from his fierce anger. Therefore that place has been called the Valley of Achor ever since.
 
-\subsection*{\textbf{Ai Destroyed}}
+\subsection*{\textcolor{MidnightBlue}{\textbf{Ai Destroyed}}}
+
 \chapterWithIndent{8}{%
   \vs{1} Then the Lord said to Joshua, ``Do not be afraid; do not be discouraged. Take the whole army with you, and go up and attack Ai. For I have delivered into your hands the king of Ai, his people, his city and his land.
   \vs{2} You shall do to Ai and its king as you did to
@@ -349,7 +382,7 @@ Then all Israel stoned him, and after they had stoned the rest, they burned them
 \vs{7} you are to rise up from the ambush and take the city. The Lord your God will give it into your hand.
 \vs{8} When you have taken the city, set it on fire. Do what the Lord has commanded. See to it; you have my orders.''
 
-\vs{9} Then Joshua sent them off, and they went to the place of ambush and lay in wait between Bethel and Ai, to the west of Ai. But Joshua spent that night with the people.
+\vs{9} Then Joshua sent them off, and they went to the place of ambush and lay in wait between Bethel and Ai, to the west of Ai. But Joshua spent that night with the people.\vnote{9}{\textbf{8:9} - Bethel played an important role in the lives of Abraham and Jacob. Abraham built an altar between Bethel and Ai (Ge 12:8), and Jacob, en route to Haran while fleeing from Esau, experienced a vivid dream at Bethel (Ge 28:10–17).}
 
 \vs{10} Early the next morning Joshua mustered his army, and he and the leaders of Israel marched before them to Ai.
 \vs{11} The entire force that was with him marched up and approached the city and arrived in front of it. They set up camp north of Ai, with the valley between them and the city.
@@ -377,7 +410,7 @@ Then all Israel stoned him, and after they had stoned the rest, they burned them
 \vs{28} So Joshua burned Ai and made it a permanent heap of ruins, a desolate place to this day.
 \vs{29} He impaled the body of the king of Ai on a pole and left it there until evening. At sunset, Joshua ordered them to take the body from the pole and throw it down at the entrance of the city gate. And they raised a large pile of rocks over it, which remains to this day.
 
-\subsection*{\textbf{The Covenant Renewed at Mount Ebal}}
+\subsection*{\textcolor{MidnightBlue}{\textbf{The Covenant Renewed at Mount Ebal}}}
 
 \vs{30} Then Joshua built on Mount Ebal an altar to the Lord, the God of Israel,
 \vs{31} as Moses the servant of the Lord had commanded the Israelites. He built it according to what is written in the Book of the Law of Moses---an altar of uncut stones, on which no iron tool had been used. On it they offered to the Lord burnt offerings and sacrificed fellowship offerings.
@@ -387,7 +420,7 @@ Then all Israel stoned him, and after they had stoned the rest, they burned them
 \vs{34} Afterward, Joshua read all the words of the law---the blessings and the curses---just as it is written in the Book of the Law.
 \vs{35} There was not a word of all that Moses had commanded that Joshua did not read to the whole assembly of Israel, including the women and children, and the foreigners who lived among them.
 
-\subsection*{\textbf{The Gibeonite Deception}}
+\subsection*{\textcolor{MidnightBlue}{\textbf{The Gibeonite Deception}}}
 
 \chapterWithIndent{9}{
   \vs{1} Now when all the kings west of the Jordan heard about these things---the kings in the hill country, in the western foothills and along the entire coast of the Mediterranean Sea as far as Lebanon (the Hittites, Amorites, Canaanites, Perizzites, Hivites and Jebusites)---
@@ -395,6 +428,874 @@ Then all Israel stoned him, and after they had stoned the rest, they burned them
 
 \noindent \vs{2} they came together to wage war against Joshua and Israel.
 
-%\end{multicols}
+\vs{3} However, when the people of Gibeon heard what Joshua had done to Jericho and Ai,
+\vs{4} they resorted to a ruse: they went as a delegation whose donkeys were loaded with worn-out sacks and old wineskins, cracked and mended.
+\vs{5} They put worn and patched sandals on their feet and wore old clothes. All the bread of their food supply was dry and moldy.
+\vs{6} Then they went to Joshua in the camp at Gilgal and said to him and the Israelites, ``We have come from a distant country; make a treaty with us.''
+
+\vs{7} The Israelites said to the Hivites, ``But perhaps you live near us; how then can we make a treaty with you?''
+
+\vs{8} ``We are your servants,'' they said to Joshua. But Joshua asked, ``Who are you and where do you come from?''
+
+\vs{9} They answered: ``Your servants have come from a very distant country because of the fame of the Lord your God. For we have heard reports of him: all that he did in Egypt,
+\vs{10} and all that he did to the two kings of the Amorites east of the Jordan---Sihon king of Heshbon and Og king of Bashan, who reigned in Ashtaroth.
+\vs{11} And our elders and all those living in our country said to us, `Take provisions for your journey; go and meet them and say to them: We are your servants; make a treaty with us.'"
+\vs{12} This bread of ours was warm when we packed it at home on the day we left to come to you. But now see how dry and moldy it is.
+\vs{13} And these wineskins that we filled were new, but see how cracked they are; and our clothes and sandals are worn out by the very long journey.''
+
+\vs{14} The Israelites sampled their provisions but did not inquire of the Lord.
+\vs{15} Then Joshua made a treaty of peace with them to let them live, and the leaders of the assembly ratified it by oath.
+
+\vs{16} Three days after they made the treaty with the Gibeonites, the Israelites heard that they were neighbors, living near them.
+\vs{17} So the Israelites set out and on the third day came to their cities: Gibeon, Kephirah, Beeroth and Kiriath Jearim.
+\vs{18} But the Israelites did not attack them, because the leaders of the assembly had sworn an oath to them by the Lord, the God of Israel.
+
+The whole assembly grumbled against the leaders,
+\vs{19} but all the leaders answered, ``We have given them our oath by the Lord, the God of Israel, and we cannot touch them now.
+\vs{20} This is what we will do to them: We will let them live, so that God's anger will not fall on us for breaking the oath we swore to them.''
+\vs{21} They continued, ``Let them live, but let them be woodcutters and water carriers in the service of the whole assembly.'' So the leaders' promise to them was kept.
+
+\vs{22} Then Joshua summoned the Gibeonites and said, ``Why did you deceive us by saying, `We live a long way from you,' while actually you live near us?
+\vs{23} You are now under a curse: you will never be released from service as woodcutters and water carriers for the house of my God.''
+
+\vs{24} They answered Joshua, ``Your servants were clearly told how the Lord your God had commanded his servant Moses to give you the whole land and to wipe out all its inhabitants from before you. So we feared for our lives because of you, and that is why we did this.
+\vs{25} We are now in your hands. Do to us whatever seems good and right to you.''
+
+\vs{26} So Joshua saved them from the Israelites, and they did not kill them.
+\vs{27} That day he made the Gibeonites woodcutters and water carriers for the assembly, to provide for the needs of the altar of the Lord at the place the Lord would choose. And that is what they are to this day.
+
+\subsection*{\textcolor{MidnightBlue}{\textbf{The Sun Stands Still}}}
+\chapterWithBigIndent{10}{%
+  \vs{1} Now Adoni-Zedek king of Jerusalem heard that Joshua had taken Ai and totally destroyed it, doing to Ai and its king as he had done to Jericho and its king, and that the people of Gibeon had made a treaty of peace with Israel and had become their allies.
+}
+\vs{2} He and his people were very much alarmed at this, because Gibeon was an important city, like one of the royal cities; it was larger than Ai, and all its men were good fighters.
+\vs{3} So Adoni-Zedek king of Jerusalem appealed to Hoham king of Hebron, Piram king of Jarmuth, Japhia king of Lachish and Debir king of Eglon.
+\vs{4} ``Come up and help me attack Gibeon,'' he said, ``because it has made peace with Joshua and the Israelites.''
+
+\vs{5} Then the five kings of the Amorites---the kings of Jerusalem, Hebron, Jarmuth, Lachish and Eglon---joined forces. They moved up with all their troops and took up positions against Gibeon and attacked it.
+
+\vs{6} The Gibeonites then sent word to Joshua in the camp at Gilgal: ``Do not abandon your servants. Come up to us quickly and save us! Help us, because all the Amorite kings from the hill country have joined forces against us.''
+
+\vs{7} So Joshua marched up from Gilgal with his entire army, including all the best fighting men.
+\vs{8} The Lord said to Joshua, ``Do not be afraid of them; I have given them into your hand. Not one of them will be able to withstand you.''
+
+\vs{9} After an all-night march from Gilgal, Joshua took them by surprise.
+\vs{10} The Lord threw them into confusion before Israel, so Joshua and the Israelites defeated them completely at Gibeon. Israel pursued them along the road going up to Beth Horon and cut them down all the way to Azekah and Makkedah.
+\vs{11} As they fled before Israel on the road down from Beth Horon to Azekah, the Lord hurled large hailstones down on them, and more of them died from the hail than were killed by the swords of the Israelites.
+
+\vs{12} On the day the Lord gave the Amorites over to Israel, Joshua said to the Lord in the presence of Israel:
+
+``Sun, stand still over Gibeon, and you, moon, over the Valley of Aijalon.''
+
+\vs{13} So the sun stood still, and the moon stopped, till the nation avenged itself on its enemies, as it is written in the Book of Jashar.\vnote{13}{\textbf{10:13} - The Book of Jashar, now lost, was an early account of Israel’s wars (perhaps all in poetic form; see 2Sa 1:18).}
+
+The sun stopped in the middle of the sky and delayed going down about a full day.
+\vs{14} There has never been a day like it before or since, a day when the Lord listened to a human being. Surely the Lord was fighting for Israel!
+
+\vs{15} Then Joshua returned with all Israel to the camp at Gilgal.
+
+\subsection*{\textcolor{MidnightBlue}{\textbf{Five Amorite Kings Killed}}}
+
+\hspace{0.5cm} \vs{16} Now the five kings had fled and hidden in the cave at Makkedah.
+\vs{17} When Joshua was told that the five kings had been found hiding in the cave at Makkedah,
+\vs{18} he said, ``Roll large rocks up to the mouth of the cave and post some men there to guard it.
+\vs{19} But don't stop! Pursue your enemies! Attack them from the rear and don't let them enter their cities, for the Lord your God has given them into your hand.''
+
+\vs{20} So Joshua and the Israelites destroyed them completely, but a few survivors managed to reach their fortified cities.
+\vs{21} The whole army then returned safely to Joshua in the camp at Makkedah, and no one uttered a word against the Israelites.
+
+\vs{22} Joshua said, ``Open the mouth of the cave and bring those five kings out to me.''
+\vs{23} So they brought the five kings out of the cave---the kings of Jerusalem, Hebron, Jarmuth, Lachish and Eglon.
+\vs{24} When they had brought these kings to Joshua, he summoned all men of Israel and said to the army commanders who had come with him, ``Come here and put your feet on the necks of these kings.'' So they came forward and placed their feet on their necks.\vnote{24}{\textbf{10:24} - This public humiliation of defeated enemy chieftains, pictured in the artwork of Egypt and Assyria, was the usual
+climax of warfare in ancient times and the customary sign of total subjection.}
+
+\vs{25} Joshua said to them, ``Do not be afraid; do not be discouraged. Be strong and courageous. This is what the Lord will do to all the enemies you are going to fight.''
+\vs{26} Then Joshua struck and killed the five kings and hanged them on five poles, and they were left hanging on the poles until evening.
+
+\vs{27} At sunset Joshua gave the order, and they took them down from the poles and threw them into the cave where they had been hiding. At the mouth of the cave they placed a large pile of rocks, which remains to this day.
+
+\subsection*{{\textcolor{MidnightBlue}{\textbf{Southern Cities Conquered}}}}
+
+\hspace{0.5cm} \vs{28} That day Joshua took Makkedah. He put the city and its king to the sword and totally destroyed everyone in it. He left no survivors. And he did to the king of Makkedah as he had done to the king of Jericho.
+
+\vs{29} Then Joshua and all Israel with him moved on from Makkedah to Libnah and attacked it.
+\vs{30} The Lord also gave that city and its king into Israel's hand. The city and everyone in it Joshua put to the sword. He left no survivors there. And he did to its king as he had done to the king of Jericho.
+
+\vs{31} Then Joshua and all Israel with him moved on from Libnah to Lachish. He took up positions against it and attacked it.
+\vs{32} The Lord gave Lachish into Israel's hands, and Joshua took it on the second day. The city and everyone in it he put to the sword, just as he had done to Libnah.
+\vs{33} Meanwhile, Horam king of Gezer had come up to help Lachish, but Joshua defeated him and his army---until no survivors were left.\vnote{33}{\textbf{10:33} - The defeat of Horam, king of Gezer, is an important detail, as he ruled the most powerful city in the area. Gezer was
+eventually taken over by the Egyptians and given to King Solomon as a wedding gift (see 1Ki 9:16).}
+
+\vs{34} Then Joshua and all Israel with him moved on from Lachish to Eglon; they took up positions against it and attacked it.
+\vs{35} They captured it that same day and put it to the sword and totally destroyed everyone in it, just as they had done to Lachish.
+
+\vs{36} Then Joshua and all Israel with him went up from Eglon to Hebron and attacked it.
+\vs{37} They took the city and put it to the sword, together with its king, its villages and everyone in it. They left no survivors. Just as at Eglon, they totally destroyed it and everyone in it.
+
+\vs{38} Then Joshua and all Israel with him turned around and attacked Debir.
+\vs{39} They took the city, its king and its villages and put them to the sword. Everyone in it they totally destroyed. They left no survivors. They did to Debir and its king as they had done to Libnah and its king and to Hebron.
+
+\vs{40} So Joshua subdued the whole region, including the hill country, the Negev, the western foothills and the mountain slopes, together with all their kings. He left no survivors. He totally destroyed all who breathed, just as the Lord, the God of Israel, had commanded.
+\vs{41} Joshua subdued them from Kadesh Barnea to Gaza and from the whole region of Goshen to Gibeon.\vnote{41}{\textbf{10:41} - This Goshen refers to the eastern Negev, not to be confused with the Goshen in the delta of Egypt.}
+\vs{42} All these kings and their lands Joshua conquered in one campaign, because the Lord, the God of Israel, fought for Israel.
+
+\vs{43} Then Joshua returned with all Israel to the camp at Gilgal.
+
+\subsection*{\textcolor{MidnightBlue}{\textbf{Northern Kings Defeated}}}
+
+\chapterWithBigIndent{11}{
+  \vs{1} When Jabin king of Hazor heard of this, he sent word to Jobab king of Madon, to the kings of Shimron and Akshaph,
+  \vs{2} and to the northern kings who were in the mountains in the Arabah south of Kinnereth, in the western foothills and in Naphoth Dor on the
+}
+\noindent west;\vnote{1}{\textbf{11:1-5} - Canaan was at this time made up of independent, generally hostile city-states, but a common enemy led them to combine forces. The northern coalition was Israel’s most formidable foe to date. Horses and chariots posed an awesome
+challenge to the Israelites, whose army was made up of foot soldiers.}
+\vs{3} to the Canaanites in the east and west; the Amorites, Hittites, Perizzites and Jebusites in the hill country; and the Hivites below Hermon in the region of Mizpah.
+\vs{4} They came out with all their troops and a large number of horses and chariots---a huge army, as numerous as the sand on the seashore.
+\vs{5} All these kings joined forces and made camp together at the Waters of Merom to fight against Israel.
+
+\vs{6} The Lord said to Joshua, ``Do not be afraid of them, because by this time tomorrow I will hand all of them, slain, over to Israel. You are to hamstring their horses and burn their chariots.''
+
+\vs{7} So Joshua and his whole army came against them suddenly at the Waters of Merom and attacked them,
+\vs{8} and the Lord gave them into the hand of Israel. They defeated them and pursued them all the way to Greater Sidon, to Misrephoth Maim, and to the Valley of Mizpah on the east, until no survivors were left.
+\vs{9} Joshua did to them as the Lord had directed: He hamstrung their horses and burned their chariots.
+
+\vs{10} At that time Joshua turned back and captured Hazor and put its king to the sword. (Hazor had been the head of all these kingdoms.)
+\vs{11} Everyone in it they put to the sword. They totally destroyed them, not sparing anyone that breathed, and he burned Hazor itself.
+
+\vs{12} Joshua took all these royal cities and their kings and put them to the sword. He totally destroyed them, as Moses the servant of the Lord had commanded.
+\vs{13} Yet Israel did not burn any of the cities built on their mounds---except Hazor, which Joshua burned.\vnote{13}{\textbf{11:13} - The Hebrew word for “mound” is tel (Arabic tell), a hill formed by the accumulated debris of multiple ancient settlements layered one upon another.}
+\vs{14} The Israelites carried off for themselves all the plunder and livestock of these cities, but all the people they put to the sword until they completely destroyed them, not sparing anyone that breathed.
+\vs{15} As the Lord had commanded his servant Moses, so Moses commanded Joshua, and Joshua did it; he left nothing undone of all that the Lord had commanded Moses.
+
+\vs{16} So Joshua took this entire land: the hill country, all the Negev, the whole region of Goshen, the western foothills, the Arabah and the mountains of Israel with their foothills,
+\vs{17} from Mount Halak, which rises toward Seir, to Baal Gad in the Valley of Lebanon below Mount Hermon. He captured all their kings and put them to death.
+\vs{18} Joshua waged war against all these kings for a long time.
+\vs{19} Except for the Hivites living in Gibeon, not one city made a treaty of peace with the Israelites, who took them all in battle.
+\vs{20} For it was the Lord himself who hardened their hearts to wage war against Israel, so that he might destroy them totally, exterminating them without mercy, as the Lord had commanded Moses.
+
+\vs{21} At that time Joshua went and destroyed the Anakites from the hill country: from Hebron, Debir and Anab, from all the hill country of Judah and from all the hill country of Israel. Joshua totally destroyed them and their towns.\vnote{21}{\textbf{11:21} - The Anakites, a people “of great size” (Nu 13:32), were so feared by the Israelites that they had initially refused to undertake the conquest. The Anakites were related to the Nephilim.}
+\vs{22} No Anakites were left in Israelite territory; only in Gaza, Gath and Ashdod did any survive.
+
+\vs{23} So Joshua took the entire land, just as the Lord had directed Moses, and he gave it as an inheritance to Israel according to their tribal divisions. Then the land had rest from war.
+
+\subsection*{\textcolor{MidnightBlue}{\textbf{List of Defeated Kings}}}
+
+\chapterWithBigIndent{12}{
+  \vs{1} These are the kings of the land whom the Israelites had defeated and whose territory they took over east of the Jordan, from the Arnon Gorge to Mount Hermon, including all the eastern side of the Arabah:
+}
+
+\noindent \vs{2} Sihon king of the Amorites, who reigned in Heshbon.\vspace{0.3cm}\vnote{1}{\textbf{12:1-24} - The conquest is summarized by a listing of the kings Israel defeated. East of the Jordan were only two kings, each
+of whom ruled a wide area with many cities. The land west of the Jordan was divided into individual city-states.}
+
+\begin{adjustwidth}{0.5cm}{0cm}
+  He ruled from Aroer on the rim of the Arnon Gorge---from the middle of the gorge---to half Gilead, including the Jabbok River, which is the border of the Ammonites.
+  \vs{3} Sihon also ruled over the eastern Arabah from the Sea of Galilee to the Sea of the Arabah (that is, the Dead Sea), to Beth Jeshimoth, and then southward below the slopes of Pisgah.\vspace{0.3cm}
+\end{adjustwidth}
+
+\noindent \vs{4} And the territory of Og king of Bashan, one of the last of the Rephaites, who reigned in Ashtaroth and Edrei.\vspace{0.3cm}
+
+\begin{adjustwidth}{0.5cm}{0cm}
+  \vs{5} Og ruled over Mount Hermon, Salecah, all of Bashan, as far as the border of the people of Geshur and Maacah, and half Gilead, to the border of Sihon king of Heshbon.\vspace{0.3cm}
+\end{adjustwidth}
+
+\vs{6} Moses the servant of the Lord and the Israelites conquered them. And Moses the servant of the Lord gave their land to the Reubenites, the Gadites and the half-tribe of Manasseh to be their possession.
+
+\vs{7} Here is a list of the kings of the land that Joshua and the Israelites conquered on the west side of the Jordan, from Baal Gad in the Valley of Lebanon to Mount Halak, which rises toward Seir. Joshua gave their lands as an inheritance to the tribes of Israel according to their tribal divisions.
+\vs{8} The lands included the hill country, the western foothills, the Arabah, the mountain slopes, the wilderness and the Negev. These were the lands of the Hittites, Amorites, Canaanites, Perizzites, Hivites and Jebusites. These were the kinds:\vspace{0.3cm}
+
+%\begin{adjustwidth}{0.5cm}{0cm}
+\begin{longtable}[l]{@{}ll@{}}
+\indent\indent \vs{9} the king of Jericho & one \\
+\indent\indent the king of Ai (near Bethel) & one \\
+\indent\indent\vs{10} the king of Jerusalem & one \\
+\indent\indent the king of Hebron & one \\
+\indent\indent\vs{11} the king of Jarmuth & one \\
+\indent\indent the king of Lachish & one \\
+\indent\indent\vs{12} the king of Eglon & one \\
+\indent\indent the king of Gezer & one \\
+\indent\indent\vs{13} the king of Debir & one \\
+\indent\indent the king of Geder & one \\
+\indent\indent\vs{14} the king of Hormah & one \\
+\indent\indent the king of Arad & one \\
+\indent\indent\vs{15} the king of Libnah & one \\
+\indent\indent the king of Adullam & one \\
+\indent\indent\vs{16} the king of Makkedah & one \\
+\indent\indent the king of Bethel & one \\
+\indent\indent\vs{17} the king of Tappuah & one \\
+\indent\indent the king of Hepher & one \\
+\indent\indent\vs{18} the king of Aphek & one \\
+\indent\indent the king of Lasharon & one \\
+\indent\indent\vs{19} the king of Madon & one \\
+\indent\indent the king of Hazor & one \\
+\indent\indent\vs{20} the king of Shimron Meron & one \\
+\indent\indent the king of Akshaph & one \\
+\indent\indent\vs{21} the king of Taanach & one \\
+\indent\indent the king of Megiddo & one \\
+\indent\indent\vs{22} the king of Kedesh & one \\
+\indent\indent the king of Jokneam in Carmel & one \\
+\indent\indent\vs{23} the king of Dor (in Naphoth Dor) & one \\
+\indent\indent the king of Goyim in Gilgal & one \\
+\indent\indent\vs{24} the king of Tirzah & one
+\end{longtable}
+\indent thirty-one kings in all.
+
+\subsection*{\textcolor{MidnightBlue}{\textbf{Land Still to Be Taken}}}
+
+\chapterWithBigIndent{13}{
+  \vs{1} When Joshua had grown old, the Lord said to him, ``You are now very old, and there are still very large areas of land to be taken over.''\vspace{0.3cm}
+}
+\begin{adjustwidth}{0.5cm}{0cm}
+  \vs{2}  ``This is the land that remains: All the regions of the Philistines and Geshurites,
+  \vs{3} from the Shihor River on the east of Egypt to the territory of Ekron on the north, all of it counted as Canaanite though held by the five Philistine rulers in Gaza, Ashdod, Ashkelon, Gath and Ekron; the territory of the Avvites
+  \vs{4} on the south; all the land of the Canaanites, from Arah to the Sidonians as far as Aphek and the border of the Amorites;
+  \vs{5} the area of Byblos; and all Lebanon to the east, from Baal Gad below Mount Hermon to Lebo Hamath.\vspace{0.3cm}
+\end{adjustwidth}
+
+\vs{6} ``As for all the inhabitants of the mountain regions from Lebanon to Misrephoth Maim, that is, all the Sidonians, I myself will drive them out before the Israelites. Be sure to allocate this land to Israel for an inheritance, as I have instructed you,
+\vs{7} and divide it as an inheritance among the nine tribes and half of the tribe of Manasseh.''
+
+\subsection*{{\textcolor{MidnightBlue}{\textbf{Division of the Land East of the Jordan}}}}
+
+\vs{8} The other half of Manasseh, the Reubenites and the Gadites had received the inheritance that Moses had given them east of the Jordan, as he, the servant of the Lord, had assigned it to them.\vspace{0.3cm}
+
+\begin{adjustwidth}{0.5cm}{0cm}
+  \vs{9} It extended from Aroer on the rim of the Arnon Gorge and from the town in the gorge, and included the whole plateau of Medeba as far as Dibon,
+  \vs{10} and all the towns of Sihon king of the Amorites who ruled in Heshbon, up to the border of the Ammonites.
+  \vs{11} It also included Gilead, the territory of the Geshurites and Maacathites, all of Mount Hermon and all Bashan as far as Salecah---
+  \vs{12} that is, the whole kingdom of Og in Bashan, who had reigned in Ashtaroth and Edrei. (He was the last of the Rephaites.) Moses had defeated him and taken over his land.
+  \vs{13} But the Israelites did not drive out the Geshurites or Maacathites; so they continue to live among the Israelites to this day.\vspace{0.3cm}
+\end{adjustwidth}
+
+\vs{14} But to the tribe of Levi, Moses had given no inheritance. The offerings made by fire to the Lord, the God of Israel, are their inheritance, as he promised them.\vspace{0.3cm}
+
+\noindent \vs{15} This is what Moses had given to the tribe of the Reubenites, according to its clans:\vspace{0.3cm}
+
+\begin{adjustwidth}{0.5cm}{0cm}
+  \vs{16} The territory from Aroer on the rim of the Arnon Gorge, and from the town in the middle of the gorge, and including the whole plateau past Medeba
+  \vs{17} to Heshbon and all its towns on the plateau, including Dibon, Bamoth Baal, Beth Baal Meon,
+  \vs{18} Jahaz, Kedemoth, Mephaath,
+  \vs{19} Kiriathaim, Sibmah, Zereth Shahar on the hill in the valley,
+  \vs{20} Beth Peor, the slopes of Pisgah and Beth Jeshimoth---
+  \vs{21} all the towns on the plateau and the entire realm of Sihon king of the Amorites, who ruled at Heshbon. Moses had defeated him and the Midianite chiefs, Evi, Rekem, Zur, Hur and Reba---princes allied with Sihon---who lived in that country.
+  \vs{22} In addition to those slain in battle, the Israelites had put to the sword Balaam son of Beor, who practiced divination.
+  \vs{23} The boundary of the Reubenites was the bank of the Jordan. These towns and their villages were the inheritance of the Reubenites, according to their clans.\vspace{0.3cm}
+\end{adjustwidth}
+
+\noindent \vs{24} This is what Moses had given to the tribe of Gad, according to its clans:\vspace{0.3cm}
+
+\begin{adjustwidth}{0.5cm}{0cm}
+  \vs{25} The territory of Jazer, all the towns of Gilead and half the Ammonite country as far as Aroer, near Rabbah;
+  \vs{26} and from Heshbon to Ramath Mizpah and Betonim, and from Mahanaim to the territory of Debir;
+  \vs{27} and in the valley, Beth Haram, Beth Nimrah, Succoth and Zaphon with the rest of the realm of Sihon king of Heshbon (the east side of the Jordan, the territory up to the end of the Sea of Galilee).
+  \vs{28} These towns and their villages were the inheritance of the Gadites, according to their clans.\vspace{0.3cm}
+\end{adjustwidth}
+
+\noindent \vs{29} This is what Moses had given to the half-tribe of Manasseh, that is, to half the family of the descendants of Manasseh, according to its clans:\vspace{0.3cm}
+
+\begin{adjustwidth}{0.5cm}{0cm}
+  \vs{30} The territory extending from Mahanaim and including all of Bashan, the entire realm of Og king of Bashan---all the settlements of Jair in Bashan, sixty towns,
+  \vs{31} half of Gilead, and Ashtaroth and Edrei (the royal cities of Og in Bashan). This was for the descendants of Makir son of Manasseh---for half of the sons of Makir, according to their clans.\vspace{0.3cm}
+\end{adjustwidth}
+
+\vs{32} This is the inheritance Moses had given them on the plains of Moab across the Jordan east of Jericho.
+\vs{33} But to the tribe of Levi, Moses had given no inheritance; the Lord, the God of Israel, is their inheritance, as he promised them.
+
+\subsection*{\textcolor{MidnightBlue}{\textbf{Division of the Land West of the Jordan}}}
+
+\chapterWithBigIndent{14}{
+  \vs{1} Now these are the areas the Israelites received as an inheritance in the land of Canaan, which Eleazar the priest, Joshua son of Nun, and the heads of the tribal clans of Israel allotted to them.
+  \vs{2} Their inheritances were assigned by lot to the nine-and-a-half tribes,\vspace{-0.6cm}
+}
+
+\noindent as the Lord had commanded through Moses.
+\vs{3} Moses had granted the two-and-a-half tribes their inheritance east of the Jordan, but had not granted the Levites an inheritance among the rest,
+\vs{4} for Joseph's descendants had become two tribes---Manasseh and Ephraim. The Levites received no share of the land but only towns to live in, with pasturelands for their flocks and herds.
+\vs{5} So the Israelites divided the land, just as the Lord had commanded Moses.
+
+\subsection*{\textcolor{MidnightBlue}{\textbf{Allotment for Caleb}}}
+
+\indent \indent \vs{6} Now the people of Judah approached Joshua at Gilgal, and Caleb son of Jephunneh the Kenizzite said to him, ``You know what the Lord said to Moses the man of God at Kadesh Barnea about you and me.
+\vs{7} I was forty years old when Moses the servant of the Lord sent me from Kadesh Barnea to explore the land. And I brought him back a report according to my convictions,
+\vs{8} but my fellow Israelites who went up with me made the hearts of the people melt in fear. I, however, followed the Lord my God wholeheartedly.
+\vs{9} So on that day Moses swore to me, `The land on which your feet have walked will be your inheritance and that of your children forever, because you have followed the Lord my God wholeheartedly.'
+
+\vs{10} ``Now then, just as the Lord promised, he has kept me alive for forty-five years since the time he said this to Moses, while Israel moved about in the wilderness. So here I am today, eighty-five years old!
+\vs{11} I am still as strong today as the day Moses sent me out; I'm just as vigorous to go out to battle now as I was then.
+\vs{12} Now give me this hill country that the Lord promised me that day. You yourself heard then that the Anakites were there and their cities were large and fortified, but, the Lord helping me, I will drive them out just as he said.''
+
+\vs{13} Then Joshua blessed Caleb son of Jephunneh and gave him Hebron as his inheritance.
+\vs{14} So Hebron has belonged to Caleb son of Jephunneh the Kenizzite ever since, because he followed the Lord, the God of Israel, wholeheartedly.
+\vs{15} (Hebron used to be called Kiriath Arba after Arba, who was the greatest man among the Anakites.)
+
+Then the land had rest from war.
+
+\subsection*{\textcolor{MidnightBlue}{\textbf{Allotment for Judah}}}
+
+\chapterWithBigIndent{15}{
+  \vs{1} The allotment for the tribe of Judah, according to its clans, extended down to the territory of Edom, to the Desert of Zin in the extreme south.\vspace{0.3cm}
+}
+
+\begin{adjustwidth}{0.5cm}{0cm}
+  \vs{2} Their southern boundary started from the bay at the southern end of the Dead Sea,
+  \vs{3} crossed south of Scorpion Pass, continued on to Zin and went over to the south of Kadesh Barnea. Then it ran past Hezron up to Addar and curved around to Karka.
+  \vs{4} It then passed along to Azmon and joined the Wadi of Egypt, ending at the Mediterranean Sea. This is their southern boundary.\vspace{0.3cm}
+
+  \vs{5} The eastern boundary is the Dead Sea as far as the mouth of the Jordan.
+  
+  The northern boundary starts from the bay of the sea at the mouth of the Jordan,
+  \vs{6} went up to Beth Hoglah and continues north of Beth Arabah to the Stone of Bohan son of Reuben.
+  \vs{7} The boundary then went up to Debir from the Valley of Achor and turned north to Gilgal, which faces the Pass of Adummim south of the gorge. It continued along to the waters of En Shemesh and came out at En Rogel.
+  \vs{8} Then it ran up the Valley of Ben Hinnom along the southern slope of the Jebusite city (that is, Jerusalem). From there it climbed to the top of the hill west of the Hinnom Valley at the northern end of the Valley of Rephaim.
+  \vs{9} From the hilltop the boundary headed toward the spring of the waters of Nephtoah, came out at the towns of Mount Ephron and went down toward Baalah (that is, Kiriath Jearim).
+  \vs{10} Then it curved westward from Baalah to Mount Seir, ran along the northern slope of Mount Jearim (that is, Kesalon), continued down to Beth Shemesh and crossed to Timnah.
+  \vs{11} It went out to the northern slope of Ekron, turned toward Shikkeron, passed along to Mount Baalah and reached Jabneel. The boundary ended at the sea.
+
+  \vs{12} The western boundary is the coastline of the Mediterranean Sea.\vspace{0.3cm}
+\end{adjustwidth}
+
+These are the boundaries around the people of Judah by their clans.\vspace{0.4cm}
+
+\vs{13} In accordance with the Lord's command to him, Joshua gave to Caleb son of Jephunneh a portion in Judah---Kiriath Arba, that is, Hebron. (Arba was the forefather of Anak.)
+\vs{14} From Hebron Caleb drove out the three Anakites---Sheshai, Ahiman and Talmai, the sons of Anak.
+\vs{15} From there he marched against the people living in Debir (formerly called Kiriath Sepher).
+\vs{16} And Caleb said, ``I will give my daughter Aksah in marriage to the man who attacks and captures Kiriath Sepher.''
+\vs{17} Othniel son of Kenaz, Caleb's brother, took it; so Caleb gave his daughter Aksah to him in marriage.
+
+\vs{18} One day when she came to Othniel, she urged him to ask her father for a field. When she got off her donkey, Caleb asked her, ``What can I do for you?''
+
+\vs{19} She replied, ``Do me a special favor. Since you have given me land in the Negev, give me also springs of water.'' So Caleb gave her the upper and lower springs.\vspace{0.4cm}
+
+\vs{20} This is the inheritance of the tribe of Judah, according to its clans:\vspace{0.4cm}
+
+\noindent\vs{21} The southernmost towns of the tribe of Judah in the Negev toward the boundary of Edom were:\vspace{0.3cm}
+
+\begin{adjustwidth}{0.5cm}{0cm}
+  \hspace{0.5cm}Kabzeel, Eder, Jagur,
+  \vs{22} Kinah, Dimonah, Adadah,
+  \vs{23} Kedesh, Hazor, Ithnan,
+  \vs{24} Ziph, Telem, Bealoth,
+  \vs{25} Hazor Hadattah, Kerioth Hezron (that is, Hazor),
+  \vs{26} Amam, Shema, Moladah,
+  \vs{27} Hazar Gaddah, Heshmon, Beth Pelet,
+  \vs{28} Hazar Shual, Beersheba, Biziothiah,
+  \vs{29} Baalah, Iim, Ezem,
+  \vs{30} Eltolad, Kesil, Hormah,
+  \vs{31} Ziklag, Madmannah, Sansannah,
+  \vs{32} Lebaoth, Shilhim, Ain and Rimmon---a total of twenty-nine towns and their villages.\vspace{0.3cm}
+\end{adjustwidth}
+
+\noindent\vs{33} In the western foothills:\vspace{0.3cm}
+
+\begin{adjustwidth}{0.5cm}{0cm}
+  \hspace{0.5cm}Eshtaol, Zorah, Ashnah,
+  \vs{34} Zanoah, En Gannim, Tappuah, Enam
+  \vs{35} Jarmuth, Adullam, Sokoh, Azekah,
+  \vs{36} Shaaraim, Adithaim and Gederah (or Gederothaim)---fourteen towns and their villages.
+
+  \vs{37} Zenan, Hadashah, Migdal Gad,
+  \vs{38} Dilean, Mizpeh, Joktheel,
+  \vs{39} Lachish, Bozkath, Eglon,
+  \vs{40} Kabbon, Lahmam, Kitlish,
+  \vs{41} Gederoth, Beth Dagon, Naamah and Makkedah---sixteen towns and their villages.
+
+  \vs{42} Libnah, Ether, Ashan,
+  \vs{43} Iphtah, Ashnah, Nezib,
+  \vs{44} Keilah, Akzib and Mareshah---nine towns and their villages.
+
+  \vs{45} Ekron, with its surrounding settlements and villages;
+  \vs{46} west of Ekron, all that were in the vicinity of Ashdod, together with their villages;
+  \vs{47} Ashdod, its surrounding settlements and villages; and Gaza, its settlements and villages, as far as the Wadi of Egypt and the coastline of the Mediterranean Sea.\vspace{0.3cm}
+\end{adjustwidth}
+
+\noindent\vs{48} In the hill country:\vspace{0.3cm}
+
+\begin{adjustwidth}{0.5cm}{0cm}
+  \hspace{0.5cm}Shamir, Jattir, Sokoh,
+  \vs{49} Dannah, Kiriath Sannah (that is, Debir),
+  \vs{50} Anab, Eshtemoh, Anim,
+  \vs{51} Goshen, Holon and Giloh---eleven towns and their villages.
+
+  \vs{52} Arab, Dumah, Eshan,
+  \vs{53} Janim, Beth Tappuah, Aphekah,
+  \vs{54} Humtah, Kiriath Arba (that is, Hebron) and Zior---nine towns and their villages.
+
+  \vs{55} Maon, Carmel, Ziph, Juttah,
+  \vs{56} Jezreel, Jokdeam and Zanoah,
+  \vs{57} Kain, Gibeah and Timnah---ten towns and their villages.
+
+  \vs{58} Halhul, Beth Zur, Gedor,
+  \vs{59} Maarath, Beth Anoth and Eltekon---six towns and their villages.
+
+  \vs{60} Kiriath Baal (that is, Kiriath Jearim) and Rabbah---two towns and their villages.\vspace{0.3cm}
+\end{adjustwidth}
+
+\noindent\vs{61} In the wilderness:\vspace{0.3cm}
+
+\begin{adjustwidth}{0.5cm}{0cm}
+  \hspace{0.5cm}Beth Arabah, Middin, Sekakah,
+  \vs{62} Nibshan, the City of Salt and En Gedi---six towns and their villages.\vspace{0.3cm}
+\end{adjustwidth}
+
+\noindent\vs{63} Judah could not dislodge the Jebusites, who were living in Jerusalem; to this day the Jebusites live there with the people of Judah.
+
+\subsection*{\textcolor{MidnightBlue}{\textbf{Allotment for Ephraim and Manasseh}}}
+
+\chapterWithBigIndent{16}{
+  \vs{1} The allotment for Joseph began at the Jordan east of the spring of Jericho and went up from there through the desert into the hill country of Bethel.
+  \vs{2} It went on from Bethel (that is, Luz), crossed over to the territory of the Arkites in Ataroth,
+  \vs{3} descended
+}
+\begin{adjustwidth}{0.5cm}{0cm}
+  westward to the territory of the Japhletites as far as the region of Lower Beth Horon and on to Gezer, ending at the Mediterranean Sea.\vspace{0.3cm}
+\end{adjustwidth}
+\vspace{-0.3cm}\noindent \vs{4} So Manasseh and Ephraim, the descendants of Joseph, received their inheritance.\vspace{0.3cm}
+
+\vs{5} This was the territory of Ephraim, according to its clans:\vspace{0.3cm}
+
+\begin{adjustwidth}{0.5cm}{0cm}
+  \hspace{0.5cm}The boundary of their inheritance went from Ataroth Addar in the east to Upper Beth Horon
+  \vs{6} and continued to the Mediterranean Sea. The boundary on the north side ran from Mikmethath on the east, then turned eastward to Taanath Shiloh, passing by it to Janoah on the east.
+  \vs{7} Then it went down from Janoah to Ataroth and Naarah, touched Jericho and came out at the Jordan.
+  \vs{8} From Tappuah the border went along westward to the Kanah Ravine and ended at the Mediterranean Sea. This was the inheritance of the tribe of Ephraim, according to its clans.
+  \vs{9} It also included all the towns and villages that were set aside for the Ephraimites within the inheritance of the Manassites.\vspace{0.3cm}
+\end{adjustwidth}
+\vspace{-0.3cm}\noindent \vs{10} They did not dislodge the Canaanites living in Gezer; to this day the Canaanites live among the people of Ephraim, but are required to do forced labor.
+
+\chapterWithBigIndent{17}{
+  \vs{1} This was the allotment for the tribe of Manasseh as Joseph's firstborn, that is, for Makir, Manasseh's firstborn. Makir was the ancestor of the Gileadites, who had received Gilead and Bashan because the Makirites were great soldiers.
+  \vs{2} So this allotment was for the\vspace{0.05cm}
+
+}
+rest of the people of Manasseh---the clans of Abiezer, Helek, Asriel, Shechem, Hepher and Shemida. These are the other male descendants of Manasseh son of Joseph by their clans.
+
+\vs{3} Now Zelophehad son of Hepher, the son of Gilead, the son of Makir, the son of Manasseh, had no sons but only daughters, whose names were Mahlah, Noah, Hoglah, Milkah and Tirzah.
+\vs{4} They approached Eleazar the priest, Joshua son of Nun and the leaders and said, ``The Lord commanded Moses to give us an inheritance among our relatives.'' So Joshua gave them an inheritance along with the brothers of their father, according to the Lord's command.
+\vs{5} Manasseh's share consisted of ten tracts of land besides Gilead and Bashan east of the Jordan,
+\vs{6} because the daughters of Manasseh received an inheritance among his sons, and the land of Gilead belonged to the rest of the descendants of Manasseh.
+
+\begin{adjustwidth}{0.5cm}{0cm}
+  \hspace{0.5cm}\vs{7} The territory of Manasseh extended from Asher to Mikmethath east of Shechem. The boundary ran southward from there to the inhabitants of En Tappuah.
+  \vs{8} (Manasseh had the land of Tappuah, but Tappuah itself, on the border of Manasseh, belonged to the Ephraimites.)
+  \vs{9} Then the boundary continued south to the Kanah Ravine. There were towns belonging to Ephraim lying among the towns of Manasseh, but the boundary of Manasseh was north of the Kanah Ravine and ended at the Mediterranean Sea.
+  \vs{10} On the south the land belonged to Ephraim, on the north to Manasseh. The territory of Manasseh reached the Mediterranean Sea and bordered Asher on the north and Issachar on the east.
+
+  \vs{11} Within Issachar and Asher, Manasseh also had Beth Shan, Ibleam and the people of Dor, Endor, Taanach and Megiddo, together with their surrounding settlements (the third in the list is Naphoth).
+\end{adjustwidth}
+
+\noindent \vs{12} Yet the Manassites were not able to occupy these towns, for the Canaanites were determined to live in that region.
+\vs{13} However, when the Israelites grew stronger, they subjected the Canaanites to forced labor but did not drive them out completely.
+
+\vs{14} The people of Joseph said to Joshua, ``Why have you given us only one allotment and one portion for an inheritance? We are a numerous people, and the Lord has blessed us abundantly.''
+
+\vs{15} ``If you are so numerous,'' Joshua answered, ``and if the hill country of Ephraim is too small for you, go up into the forest and clear land for yourselves there in the land of the Perizzites and Rephaites.''
+
+\vs{16} The people of Joseph replied, ``The hill country is not enough for us, and all the Canaanites who live in the plain have chariots fitted with iron, both those in Beth Shan and its settlements and those in the Valley of Jezreel.''
+
+\vs{17} But Joshua said to the tribes of Joseph---to Ephraim and Manasseh---``You are numerous and very powerful. You will have not only one allotment
+\vs{18} but the forested hill country as well. Clear it, and its farthest limits will be yours; though the Canaanites have chariots fitted with iron and though they are strong, you can drive them out.''
+
+\subsection*{\textcolor{MidnightBlue}{\textbf{Division of the Rest of the Land}}}
+
+\chapterWithBigIndent{18}{
+  \vs{1} The whole assembly of the Israelites gathered at Shiloh and set up the tent of meeting there. The country was brought under their control,
+  \vs{2} but there were still seven Israelite tribes who had not yet received their inheritance.
+}
+
+\vs{3} So Joshua said to the Israelites: ``How long will you wait before you begin to take possession of the land that the Lord, the God of your ancestors, has given you?
+\vs{4} Appoint three men from each tribe. I will send them out to make a survey of the land and to write a description of it according to the inheritance of each. Then they will return to me.
+\vs{5} You are to divide the land into seven parts. Judah is to remain in its territory on the south and the house of Joseph in its territory on the north.
+\vs{6} After you have written descriptions of the seven parts of the land, bring them here to me and I will cast lots for you in the presence of the Lord our God.
+\vs{7} The Levites, however, do not get a portion among you, because the priestly service of the Lord is their inheritance. And Gad, Reuben and the half-tribe of Manasseh have already received their inheritance on the east side of the Jordan, which Moses the servant of the Lord gave them.''
+
+\vs{8} As the men started on their way to map out the land, Joshua instructed them, ``Go and make a survey of the land and write a description of it. Then return to me and I will cast lots for you here at Shiloh in the presence of the Lord.''
+\vs{9} So the men left and went through the land. They wrote its description on a scroll town by town in seven parts and returned to Joshua in the camp at Shiloh.
+\vs{10} Joshua then cast lots for them in Shiloh in the presence of the Lord, and there he distributed the land to the Israelites according to their tribal divisions.
+
+\subsection*{\textcolor{MidnightBlue}{\textbf{Allotment for Benjamin}}}
+
+\vs{11} The first lot came up for the tribe of Benjamin according to its clans. Their allotted territory lay between the tribes of Judah and Joseph:
+
+\begin{adjustwidth}{0.5cm}{0cm}
+  \hspace{0.5cm}\vs{12} On the north side their boundary began at the Jordan, past the northern slope of Jericho and headed west into the hill country, coming out at the wilderness of Beth Aven.
+  \vs{13} From there it crossed to the south slope of Luz (that is, Bethel) and went down to Ataroth Addar on the hill south of Lower Beth Horon.
+
+  \vs{14} From the hill facing Beth Horon on the south, the boundary turned south along the western side and came out at Kiriath Baal (that is, Kiriath Jearim), a town of the people of Judah. This was the western side.
+
+  \vs{15} The southern side began at the outskirts of Kiriath Jearim on the west and the boundary came out at the spring of the waters of Nephtoah.
+  \vs{16} The boundary went down to the foot of the hill facing Ben Hinnom Valley on the north, which is at the northern end of Rephaim Valley. It continued down Hinnom Valley along the southern slope of Jebusite City (that is, Jerusalem) and headed toward En Rogel.
+  \vs{17} It then curved north and went to En Shemesh, continued to Geliloth (which faces the Pass of Adummim) and ran down to the Stone of Bohan son of Reuben.
+  \vs{18} It continued to the northern slope of Beth Arabah and on down into the Arabah.
+  \vs{19} It then went to the northern slope of Beth Hoglah and came out at the northern bay of the Dead Sea, at the mouth of the Jordan in the south. This was the southern boundary.
+
+  \vs{20} The Jordan formed the boundary on the eastern side.
+  
+\end{adjustwidth}
+
+\noindent These were the boundaries that marked out the inheritance of the clans of Benjamin on all sides.\vspace{0.4cm}
+
+\noindent \vs{21} The tribe of Benjamin, according to its clans, had the following towns:
+
+\begin{adjustwidth}{0.5cm}{0cm}
+  \hspace{0.5cm}Jericho, Beth Hoglah, Emek Keziz,
+  \vs{22} Beth Arabah, Zemaraim, Bethel,
+  \vs{23} Avvim, Parah, Ophrah,
+  \vs{24} Kephar Ammoni, Ophni and Geba---twelve towns and their villages.
+
+  \vs{25} Gibeon, Ramah, Beeroth,
+  \vs{26} Mizpah, Kephirah, Mozah,
+  \vs{27} Rekem, Irpeel, Taralah,
+  \vs{28} Zelah, Haeleph, the Jebusite city (that is, Jerusalem), Gibeah and Kiriath---fourteen towns and their villages.
+\end{adjustwidth}
+
+\noindent This was the inheritance of Benjamin for its clans.
+
+\subsection*{\textcolor{MidnightBlue}{\textbf{Allotment for Simeon}}}
+
+\chapterWithBigIndent{19}{
+  \vs{1} The second lot came out for the tribe of Simeon according to its clans. Their inheritance lay within the territory of Judah.
+  \vs{2} It included:\vspace{0.3cm}
+}
+\begin{adjustwidth}{0.5cm}{0cm}
+  \hspace{0.5cm}Beersheba (or Sheba), Moladah,
+  \vs{3} Hazar Shual, Balah, Ezem,
+  \vs{4} Eltolad, Bethul, Hormah,
+  \vs{5} Ziklag, Beth Markaboth, Hazar Susah,
+  \vs{6} Beth Lebaoth and Sharuhen---thirteen towns and their villages;
+
+  \vs{7} Ain, Rimmon, Ether and Ashan---four towns and their villages---
+  \vs{8} and all the villages around these towns as far as Baalath Beer (Ramah in the Negev).
+\end{adjustwidth}
+
+\noindent This was the inheritance of the tribe of the Simeonites, according to its clans.
+\vs{9} The inheritance of the Simeonites was taken from the share of Judah, because Judah's portion was more than they needed. So the Simeonites received their inheritance within the territory of Judah.
+
+\subsection*{\textcolor{MidnightBlue}{\textbf{Allotment for Zebulun}}}
+
+\vs{10} The third lot came up for Zebulun according to its clans:
+
+\begin{adjustwidth}{0.5cm}{0cm}
+  \hspace{0.5cm}The boundary of their inheritance went as far as Sarid.
+  \vs{11} Going west it ran to Maralah, touched Dabbesheth and extended to the ravine near Jokneam.
+  \vs{12} It turned east from Sarid toward the sunrise to the territory of Kisloth Tabor and went on to Daberath and up to Japhia.
+  \vs{13} Then it continued eastward to Gath Hepher and Eth Kazin; it came out at Rimmon and turned toward Neah.
+  \vs{14} There the boundary went around on the north to Hannathon and ended at the Valley of Iphtah El.
+  \vs{15} Included were Kattah, Nahalal, Shimron, Idalah and Bethlehem. There were twelve towns and their villages.
+\end{adjustwidth}
+
+\noindent \vs{16} These towns and their villages were the inheritance of Zebulun, according to its clans.
+
+\subsection*{\textcolor{MidnightBlue}{\textbf{Allotment for Issachar}}}
+
+\vs{17} The fourth lot came out for Issachar according to its clans.
+\vs{18} Their territory included:
+
+\begin{adjustwidth}{0.5cm}{0cm}
+  \hspace{0.5cm}Jezreel, Kesulloth, Shunem,
+  \vs{19} Hapharaim, Shion, Anaharath,
+  \vs{20} Rabbith, Kishion, Ebez,
+  \vs{21} Remeth, En Gannim, En Haddah and Beth Pazzez.
+  \vs{22} The boundary touched Tabor, Shahazumah and Beth Shemesh, and ended at the Jordan. There were sixteen towns and their villages.
+\end{adjustwidth}
+
+\noindent \vs{23} These towns and their villages were the inheritance of the tribe of Issachar, according to its clans.
+
+\subsection*{\textcolor{MidnightBlue}{\textbf{Allotment for Asher}}}
+\vs{24} The fifth lot came out for the tribe of Asher according to its clans.
+\vs{25} Their territory included:
+
+\begin{adjustwidth}{0.5cm}{0cm}
+  \hspace{0.5cm}Helkath, Hali, Beten, Akshaph,
+  \vs{26} Allammelek, Amad and Mishal. On the west the boundary touched Carmel and Shihor Libnath.
+  \vs{27} It then turned east toward Beth Dagon, touched Zebulun and the Valley of Iphtah El, and went north to Beth Emek and Neiel, passing Kabul on the left.
+  \vs{28} It went to Abdon, Rehob, Hammon and Kanah, as far as Greater Sidon.
+  \vs{29} The boundary then turned back toward Ramah and went to the fortified city of Tyre, turning toward Hosah and ending at the Mediterranean Sea in the region of Akzib,
+  \vs{30} Ummah, Aphek and Rehob. There were twenty-two towns and their villages.
+\end{adjustwidth}
+
+\noindent \vs{31} These towns and their villages were the inheritance of the tribe of Asher, according to its clans.
+
+\subsection*{\textcolor{MidnightBlue}{\textbf{Allotment for Naphtali}}}
+
+\vs{32} The sixth lot came out for Naphtali according to its clans:
+
+\begin{adjustwidth}{0.5cm}{0cm}
+  \hspace{0.5cm}\vs{33} Their boundary went from Heleph and the large tree in Zaanannim, passing Adami Nekeb and Jabneel to Lakkum and ending at the Jordan.
+  \vs{34} The boundary ran west through Aznoth Tabor and out to Hukkok; it touched Zebulun on the south, Asher on the west and the Jordan on the east.
+  \vs{35} The fortified cities were Ziddim, Zer, Hammath, Rakkath, Kinnereth,
+  \vs{36} Adamah, Ramah, Hazor,
+  \vs{37} Kedesh, Edrei, En Hazor,
+  \vs{38} Iron, Migdal El, Horem, Beth Anath and Beth Shemesh. There were nineteen towns and their villages.
+\end{adjustwidth}
+
+\noindent \vs{39} These towns and their villages were the inheritance of the tribe of Naphtali, according to its clans.
+
+\subsection*{\textcolor{MidnightBlue}{\textbf{Allotment for Dan}}}
+
+\vs{40} The seventh lot came out for the tribe of Dan according to its clans.
+\vs{41} The territory of their inheritance included:
+
+\begin{adjustwidth}{0.5cm}{0cm}
+  \hspace{0.5cm}Zorah, Eshtaol, Ir Shemesh,
+  \vs{42} Shaalabbin, Aijalon, Ithlah,
+  \vs{43} Elon, Timnah, Ekron,
+  \vs{44} Eltekeh, Gibbethon, Baalath,
+  \vs{45} Jehud, Bene Berak, Gath Rimmon,
+  \vs{46} Me Jarkon and Rakkon, with the territory facing Joppa.
+\end{adjustwidth}
+
+\noindent \vs{47} (When the territory of the Danites was lost to them, they went up and attacked Leshem, took it, put it to the sword and occupied it. They settled in Leshem and named it Dan after their ancestor.)
+
+\noindent \vs{48} These towns and their villages were the inheritance of the tribe of Dan, according to its clans.
+
+\subsection*{\textcolor{MidnightBlue}{\textbf{Allotment for Joshua}}}
+
+\hspace{0.5cm} \vs{49} When they had finished dividing the land into its allotted portions, the Israelites gave Joshua son of Nun an inheritance among them,
+\vs{50} as the Lord had commanded. They gave him the town he asked for---Timnath Serah in the hill country of Ephraim. He built up the town and settled there.
+
+\vs{51} These are the territories that Eleazar the priest, Joshua son of Nun, and the heads of the tribal clans of Israel allotted as inheritances by lot at Shiloh in the presence of the Lord at the entrance to the tent of meeting. And so they finished dividing the land.
+
+\subsection*{\textcolor{MidnightBlue}{\textbf{Cities of Refuge}}}
+
+\chapterWithBigIndent{20}{
+  \vs{1} Then the Lord said to Joshua:
+  \vs{2} ``Tell the Israelites to designate the cities of refuge, as I instructed you through Moses,
+  \vs{3} so that anyone who kills a person accidentally and unintentionally may flee there and find protection from the avenger of blood.
+  \vs{4} When\vspace{0.1cm}
+}
+\noindent they flee to one of these cities, they are to stand in the entrance of the city gate and state their case before the elders of that city. Then the elders are to admit them into their city and provide a place to live among them.
+\vs{5} If the avenger of blood comes in pursuit, the elders must not surrender the one accused, because they killed their neighbor unintentionally and without malice aforethought.
+\vs{6} They are to stay in that city until they have stood trial before the assembly and until the death of the high priest who is serving at the time. Then they may go back to their own home in the town from which they fled.''
+
+\vs{7} So they set apart Kedesh in Galilee in the hill country of Naphtali, Shechem in the hill country of Ephraim, and Kiriath Arba (that is, Hebron) in the hill country of Judah.
+\vs{8} East of the Jordan (on the other side of Jericho) they designated Bezer in the wilderness, in the plateau, from the tribe of Reuben, Ramoth in Gilead from the tribe of Gad and Golan in Bashan from the tribe of Manasseh.
+\vs{9} Any of the Israelites or any foreigner residing among them who killed someone accidentally could flee to these designated cities and not die at the hand of the avenger of blood prior to standing trial before the assembly.
+
+\subsection*{\textcolor{MidnightBlue}{\textbf{Towns for the Levites}}}
+
+\chapterWithBigIndent{21}{
+  \vs{1} Now the family heads of the Levites approached Eleazar the priest, Joshua son of Nun and the heads of the other tribal families of Israel
+  \vs{2} at Shiloh in Canaan and said to them, ``The Lord commanded through Moses that you give us towns to live in, with pasturelands\vspace{-0.4cm}
+}
+\noindent for our livestock.''
+\vs{3} So as the Lord had commanded, the Israelites gave the Levites the following towns and pasturelands out of their own inheritance:
+
+\vs{4} The first lot came out for the Kohathites, according to their clans. The Levites who were descendants of Aaron the priest were allotted thirteen towns from the tribes of Judah, Simeon and Benjamin.
+\vs{5} The rest of Kohath's descendants were allotted ten towns from the clans of the tribes of Ephraim, Dan and the half-tribe of Manasseh.
+
+\vs{6} The descendants of Gershon were allotted thirteen towns from the clans of the tribes of Issachar, Asher, Naphtali and the half-tribe of Manasseh in Bashan.
+
+\vs{7} The descendants of Merari, according to their clans, received twelve towns from the tribes of Reuben, Gad and Zebulun.
+
+\vs{8} So the Israelites set apart as towns for the Levites the following: The towns and their pasturelands were given by lot, as the Lord had commanded through Moses.\vspace{0.4cm}
+
+\noindent \vs{9} From the tribes of Judah and Simeon they allotted the following towns by name
+\vs{10} (these towns were given to the descendants of Aaron, who were from the Kohathite clans of the Levites, because the first lot fell to them):
+
+\begin{adjustwidth}{0.5cm}{0cm}
+  \hspace{0.5cm}\vs{11} They gave them Kiriath Arba (that is, Hebron), with its surrounding pastureland, in the hill country of Judah. (Arba was the forefather of Anak.)
+  \vs{12} But the fields and villages around the city they had given to Caleb son of Jephunneh as his possession.
+
+  \vs{13} So to the descendants of Aaron the priest they gave Hebron (a city of refuge for one accused of murder), Libnah,
+  \vs{14} Jattir, Eshtemoa,
+  \vs{15} Holon, Debir,
+  \vs{16} Ain, Juttah, and Beth Shemesh, together with their pasturelands---nine towns from these two tribes.
+
+  \vs{17} And from the tribe of Benjamin they gave them: Gibeon, Geba,
+  \vs{18} Anathoth and Almon, together with their pasturelands---four towns.
+\end{adjustwidth}
+
+\noindent \vs{19} The total number of towns for the priests, the descendants of Aaron, came to thirteen, together with their pasturelands. \vspace{0.4cm}
+
+\noindent \vs{20} The rest of the Kohathite clans of the Levites were allotted towns from the tribe of Ephraim:
+
+\begin{adjustwidth}{0.5cm}{0cm}
+  \hspace{0.5cm}\vs{21} In the hill country of Ephraim they were given Shechem (a city of refuge for one accused of murder) and Gezer,
+  \vs{22} Kibzaim and Beth Horon, together with their pasturelands---four towns.
+
+  \vs{23} Also from the tribe of Dan they received: Eltekeh, Gibbethon,
+  \vs{24} Aijalon and Gath Rimmon, together with their pasturelands---four towns.
+
+  \vs{25} From half the tribe of Manasseh they received: Taanach and Gath Rimmon, together with their pasturelands---two towns.
+\end{adjustwidth}
+
+\noindent \vs{26} All these ten towns and their pasturelands were given to the rest of the Kohathite clans.\vspace{0.4cm}
+
+\noindent \vs{27} The Levite clans of the Gershonites were given:\\
+from the half-tribe of Manasseh, Golan in Bashan (a city of refuge for one accused of murder) and Be Eshterah, together with their pasturelands---two towns;
+\vs{28} from the tribe of Issachar, Kishion, Daberath,
+\vs{29} Jarmuth and En Gannim, together with their pasturelands---four towns;
+\vs{30} from the tribe of Asher, Mishal, Abdon,
+\vs{31} Helkath and Rehob, together with their pasturelands---four towns;
+\vs{32} from the tribe of Naphtali, Kedesh in Galilee (a city of refuge for one accused of murder), Hammoth Dor and Kartan, together with their pasturelands---three towns.
+\vs{33} The total number of towns of the Gershonite clans came to thirteen, together with their pasturelands.\vspace{0.4cm}
+
+\noindent \vs{34} The Merarite clans (the rest of the Levites) were given:\\
+from the tribe of Zebulun, Jokneam, Kartah,
+\vs{35} Dimnah and Nahalal, together with their pasturelands---four towns;
+\vs{36} from the tribe of Reuben, Bezer, Jahaz,
+\vs{37} Kedemoth and Mephaath, together with their pasturelands---four towns;
+\vs{38} from the tribe of Gad, Ramoth in Gilead (a city of refuge for one accused of murder), Mahanaim,
+\vs{39} Heshbon and Jazer, together with their pasturelands---four towns in all.
+\vs{40} The total number of towns allotted to the Merarite clans, who were the rest of the Levites, came to twelve.
+
+\vs{41} The towns of the Levites in the territory held by the Israelites were forty-eight in all, together with their pasturelands.
+\vs{42} Each of these towns has pasturelands surrounding it; this was true for all these towns.\vspace{0.4cm}
+
+\vs{43} So the Lord gave Israel all the land he had sworn to give their ancestors, and they took possession of it and settled there.
+\vs{44} The Lord gave them rest of every side, just as he had sword to their ancestors. Not one of their enemies withstood them; the Lord gave all their enemies into their hands.
+\vs{45} Not one of all the Lord's good promises to Israel failed; every one was fulfilled.
+
+\subsection*{\textcolor{MidnightBlue}{\textbf{Eastern Tribes Return Home}}}
+
+\chapterWithBigIndent{22}{
+  \vs{1} Then Joshua summoned the Reubenites, the Gadites and the half-tribe of Manasseh
+  \vs{2} and said to them: ``You have done all that Moses the servant of the Lord commanded, and you have obeyed me in everything I commanded.
+  \vs{3} For a long time now---to this very\vspace{-0.4cm}
+}
+day---you have not deserted your fellow Israelites but have carried out the mission the Lord your God gave you.
+\vs{4} Now that the Lord your God has given them rest, as he promised, return to your homes in the land that Moses the servant of the Lord gave you on the east side of the Jordan.
+\vs{5} But be very careful to keep the command that Moses the servant of the Lord gave you: to love the Lord your God, to walk in obedience to him, to keep his commands, to hold fast to him and to serve him with all your heart and with all your soul.''
+
+\vs{6} Then Joshua blessed them and sent them away, and they went to their homes.
+\vs{7} (To the half-tribe of Manasseh Moses had given land in Bashan, and to the other half Joshua gave land on the west side of the Jordan along with their fellow Israelites.) When Joshua sent them home, he blessed them,
+\vs{8} saying, ``Return to your homes with your great wealth---with large herds of livestock, with silver, gold, bronze and iron, and a great quantity of clothing---and divide the plunder from your enemies with your fellow Israelites.''
+
+\vs{9} So the Reubenites, the Gadites and the half-tribe of Manasseh left the Israelites at Shiloh in Canaan to return to Gilead, their own land, which they had acquired in accordance with the command of the Lord through Moses.
+
+\vs{10} When they came to Geliloth near the Jordan in the land of Canaan, the Reubenites, the Gadites and the half-tribe of Manasseh built an imposing altar there by the Jordan.
+\vs{11} And when the Israelites heard that they had built the altar on the border of Canaan at Geliloth near the Jordan on the Israelite side,
+\vs{12} the whole assembly of Israel gathered at Shiloh to go to war against them.
+
+\vs{13} So the Israelites sent Phinehas son of Eleazar, the priest, to the land of Gilead---to Reuben, Gad and the half-tribe of Manasseh.
+\vs{14} With him they sent ten of the chief men, one from each of the tribes of Israel, each the head of a family division among the Israelite clans.
+
+\vs{15} When they went to Gilead---to Reuben, Gad and the half-tribe of Manasseh---they said to them:
+\vs{16} ``The whole assembly of the Lord says: `How could you break faith with the God of Israel like this? How could you turn away from the Lord and build yourselves an altar in rebellion against him now?
+\vs{17} Was not the sin of Peor enough for us? Up to this very day we have not cleansed ourselves from that sin, even though a plague fell on the community of the Lord!
+\vs{18} And are you now turning away from the Lord?
+
+`` `If you rebel against the Lord today, tomorrow he will be angry with the whole community of Israel.
+\vs{19} If the land you possess is defiled, come over to the Lord's land, where the Lord's tabernacle stands, and share the land with us. But do not rebel against the Lord or against us by building an altar for yourselves, other than the altar of the Lord our God.
+\vs{20} When Achan son of Zerah acted unfaithfully regarding the devoted things, did not wrath come on the whole community of Israel? He was not the only one who died for his sin.' ''
+
+\vs{21} Then Reuben, Gad and the half-tribe of Manasseh replied to the heads of the clans of Israel:
+\vs{22} ``The Mighty One, God, the Lord! The Mighty One, God, the Lord! He knows! And let Israel know! If this has been in rebellion or disobedience to the Lord, do not spare us this day.
+\vs{23} If we have built our own altar to turn away from the Lord and to offer burnt offerings and grain offerings or to sacrifice fellowship offerings on it, may the Lord himself call us to account.
+
+\vs{24} ``No! We did it for fear that someday your descendants might say to ours, `What do you have to do with the Lord, the God of Israel?
+\vs{25} The Lord has made the Jordan a boundary between us and you---you Reubenites and Gadites! You have no share in the Lord.' So your descendants might cause ours to stop fearing the Lord.
+
+\vs{26} ``That is why we said, `Let us get ready and build an altar---but not for burnt offerings or sacrifices.'
+\vs{27} On the contrary, it is to be a witness between us and you and the generations that follow, that we will worship the Lord at his sanctuary with our burnt offerings, sacrifices and fellowship offerings. Then in the future your descendants will not be able to say to ours, `You have no share in the Lord.'
+
+\vs{28} ``And we said, `If they ever say this to us or to our descendants, we will answer: Look at the replica of the Lord's altar, which our ancestors built, not for burnt offerings and sacrifices, but as a witness between us and you.'
+
+\vs{29} ``Far be it from us to rebel against the Lord and turn away from him today by building an altar for burnt offerings, grain offerings and sacrifices other than the altar of the Lord our God that stands before his tabernacle.''
+
+\vs{30} When Phinehas the priest and the leaders of the community---the heads of the clans of the Israelites---heard what Reuben, Gad and Manasseh had to say, they were pleased.
+\vs{31} And Phinehas son of Eleazar, the priest, said to Reuben, Gad and Manasseh, ``Today we know that the Lord is with us, because you have not been unfaithful to the Lord in this matter. Now you have rescued the Israelites from the Lord's hand.''
+
+\vs{32} Then Phinehas son of Eleazar, the priest, and the leaders returned to Canaan from their meeting with the Reubenites and Gadites in Gilead and reported to the Israelites.
+\vs{33} They were pleased with the report and praised God. And they said nothing more about going to war against them to devaste the country where the Reubenites and Gadites lived.
+
+\vs{34} And the Reubenites and Gadites gave the altar this name: A Witness Between Us---that the Lord is God.
+
+\subsection*{\textcolor{MidnightBlue}{\textbf{Joshua's Farewell to the Leaders}}}
+
+\chapterWithBigIndent{23}{
+  \vs{1} After a long time had passed and the Lord had given Israel rest from all their enemies around them, Joshua, by then a very old man,
+  \vs{2} summoned all Israel---their elders, leaders, judges and officials---and said to them: ``I am very old.
+  \vs{3} You yourselves have seen
+}
+\noindent everything the Lord your God has done to all these nations for your sake. It was the Lord your God who fought for you.
+\vs{4} Remember how I have allotted as an inheritance for your tribes all the land of the nations that remain---the nations I conquered---between the Jordan and the Mediterranean Sea in the west.
+\vs{5} The Lord your God himself will push them out for your sake. He will drive them out before you, and you will take possession of their land, as the Lord your God promised you.
+
+\vs{6} ``Be very strong; be careful to obey all that is written in the Book of the Law of Moses, without turning aside to the right or to the left.
+\vs{7} Do not associate with these nations that remain among you; do not invoke the names of their gods or swear by them. You must not serve them or bow down to them.
+\vs{8} But you are to hold fast to the Lord your God, as you have until now.
+
+\vs{9} ``The Lord has driven out before you great and powerful nations; to this day no one has been able to withstand you.
+\vs{10} One of you routs a thousand, because the Lord your God fights for you, just as he promised.
+\vs{11} So be very careful to love the Lord your God.
+
+\vs{12} ``But if you turn away and ally yourselves with the survivors of these nations that remain among you and if you intermarry with them and associate with them,
+\vs{13} then you may be sure that the Lord your God will no longer drive out these nations before you. Instead, they will become snares and traps for you, whips on your backs and thorns in your eyes, until you perish from this good land, which the Lord your God has given you.
+
+\vs{14} ``Now I am about to go the way of all the earth. You know with all your heart and soul that not one of all the good promises the Lord your God gave you has failed. Every promise has been fulfilled; not one has failed.
+\vs{15} But just as all the good things the Lord your God has promised you have come to you, so he will bring on you all the evil things he has threatened, until the Lord your God has destroyed you from this good land he has given you.
+\vs{16} If you violate the covenant of the Lord your God, which he commanded you, and go and serve other gods and bow down to them, the Lord's anger will burn against you, and you will quickly perish from the good land he has given you.''
+
+\subsection*{\textcolor{MidnightBlue}{\textbf{The Covenant Renewed at Shechem}}}
+
+\chapterWithBigIndent{24}{
+  \vs{1} Then Joshua assembled all the tribes of Israel at Shechem. He summoned the elders, leaders, judges and officials of Israel, and they presented themselves before God.
+
+  \vs{2} Joshua said to all the people, ``This is what the Lord, the God of Israel, says: `Long
+}
+\noindent ago your ancestors, including Terah the father of Abraham and Nahor, lived beyond the Euphrates River and worshiped other gods.
+\vs{3} But I took your father Abraham from the land beyond the Euphrates and led him throughout Canaan and gave him many descendants. I gave him Isaac,
+\vs{4} and to Isaac I gave Jacob and Esau. I assigned the hill country of Seir to Esau, but Jacob and his family went down to Egypt.
+
+\vs{5} `` `Then I sent Moses and Aaron, and I afflicted the Egyptians by what I did there, and I brought you out.
+\vs{6} When I brought your people out of Egypt, you came to the sea; and the Egyptians pursued them with chariots and horsemen as far as the Red Sea.
+\vs{7} But they cried to the Lord for help, and he put darkness between you and the Egyptians; he brought the sea over them and covered them. You saw with your own eyes what I did to the Egyptians. Then you lived in the wilderness for a long time.
+
+\vs{8} `` `I brought you to the land of the Amorites who lived east of the Jordan. They fought against you, but I gave them into your hands. I destroyed them from before you, and you took possession of their land.
+\vs{9} When Balak son of Zippor, the king of Moab, prepared to fight against Israel, he sent for Balaam son of Beor to put a curse on you.
+\vs{10} But I would not listen to Balaam, so he blessed you again and again, and I delivered you out of his hand.
+
+\vs{11} `` `Then you crossed the Jordan and came to Jericho. The citizens of Jericho fought against you, as did also the Amorites, Perizzites, Canaanites, Hittites, Girgashites, Hivites and Jebusites. But I gave them into your hands.
+\vs{12} I sent the hornet ahead of you, which drove them out before you---also the two Amorite kings. You did not do it with your own sword and bow.
+\vs{13} So I gave you a land on which you did not toil and cities you did not build, and you live in them and eat from vineyards and olive groves that you did not plant.'
+
+\vs{14} ``Now fear the Lord and serve him with all faithfulness. Throw away the gods your ancestors worshiped beyond the Euphrates River and in Egypt, and serve the Lord.
+\vs{15} But if serving the Lord seems undesirable to you, then choose for yourselves this day whom you will serve, whether the gods your ancestors served beyond the Euphrates, or the gods of the Amorites, in whose land you are living. But as for me and my household, we will serve the Lord.''
+
+\vs{16} Then the people answered, ``Far be it from us to forsake the Lord to serve other gods!
+\vs{17} It was the Lord our God himself who brought us and our parents up out of Egypt, from that land of slavery, and performed those great signs before our eyes. He protected us on our entire journey and among all the nations through which we traveled.
+\vs{18} And the Lord drove out before us all the nations, including the Amorites, who lived in the land. We too will serve the Lord, because he is our God.''
+
+\vs{19} Joshua said to the people, ``You are not able to serve the Lord. He is a holy God; he is a jealous God. He will not forgive your rebellion and your sins.
+\vs{20} If you forsake the Lord and serve foreign gods, he will turn and bring disaster on you and make an end of you, after he has been good to you.''
+
+\vs{21} But the people said to Joshua, ``No! We will serve the Lord.''
+
+\vs{22} Then Joshua said, ``You are witnesses against yourselves that you have chosen to serve the Lord.''
+
+``Yes, we are witnesses,'' they replied.
+
+\vs{23} ``Now then,'' said Joshua, ``throw away the foreign gods that are among you and yield your hearts to the Lord, the God of Israel.''
+
+\vs{24} And the people said to Joshua, ``We will serve the Lord our God and obey him.''
+
+\vs{25} On that day Joshua made a covenant for the people, and there at Shechem he reaffirmed for them decrees and laws.
+\vs{26} And Joshua recorded these things in the Book of the Law of God. Then he took a large stone and set it up there under the oak near the holy place of the Lord.
+
+\vs{27} ``See!'' he said to all the people, ``This stone will be a witness against us. It has heard all the words the Lord has said to us. It will be a witness against you if you are untrue to your God.''
+
+\vs{28} Then Joshua dismissed the people, each to their own inheritance.
+
+\subsection*{{\textcolor{MidnightBlue}{\textbf{Buried in the Promised Land}}}}
+
+\hspace{0.5cm} \vs{29} After these things, Joshua son of Nun, the servant of the Lord, died at the age of a hundred and ten.
+\vs{30} And they buried him in the land of his inheritance, at Timnath Serah in the hill country of Ephraim, north of Mount Gaash.
+
+\vs{31} Israel served the Lord throughout the lifetime of Joshua and of the elders who outlived him and who had experienced everything the Lord had done for Israel.
+
+\vs{32} And Joseph's bones, which the Israelites had brought up from Egypt, were buried at Shechem in the tract of land that Jacob bought for a hundred pieces of silver from the sons of Hamor, the father of Shechem. This became an inheritance of Joseph's descendants.
+
+\vs{33} And Eleazar son of Aaron died and was buried at Gibeah, which had been allotted to his son Phinehas in the hill country of Ephraim.
+
+
+
+
+
+
+
+ 
+
+
+
 
 \end{document}
